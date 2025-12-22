@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEPLAN-Software</title>
+    <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-TKQV8LKX');</script>
+  <!-- End Google Tag Manager -->
+    <link rel="stylesheet" href="{% static 'css/services.css' %}">
+    <link rel="stylesheet" href="{% static 'css/product.css' %}">
+    
+
+    <!-- <link rel="stylesheet" href="{% static 'css/home.css' %}">
+  <link rel="stylesheet" href="{% static 'css/factory.css' %}"> -->
+    <link rel="icon" href="{% static 'images/logo1.png' %}">
+   
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    {% include 'header.html' %}
+    {% include 'request_demo_modal.html' %}
+
+
+<section class="neplan-electricity-slide" aria-label="NEPLAN products hero">
+  <div class="nes-viewport">
+    <header class="nsv-hero">
+      <p class="nsv-kicker">Products</p>
+      <h1 class="nsv-title">
+        Transform Your Power Network Planning<br>with <span style="color:#ff0000;">NEPLAN</span>
+      </h1>
+      <p class="nsv-sub">
+        NEPLAN is one of the world’s most advanced software tools for power system analysis, planning,
+        and operation. At <strong>iEngineering</strong>, we provide more than just licences — we help
+        you implement, configure, and master NEPLAN to achieve precise, efficient, and reliable network
+        performance.
+      </p>
+      <div class="cta-buttons">
+        <a href="#" class="btn btn-primary js-open-demo">Request a Demo</a>
+        <!-- <a href="#modules" class="btn btn-secondary">Explore Modules</a> -->
+      </div>
+    </header>
+  </div>
+</section>
+<!-- PRODUCTS CARDS -->
+<section class="neplan-products-cards" aria-labelledby="npc-title">
+  <div class="npc-wrap">
+    <header class="npc-head" data-reveal="up">
+      <h2 id="npc-title">Explore <span style="color: rgb(190, 2, 2);"> NEPLAN</span> Products</h2>
+      <p class="npc-sub">Choose a product to learn more. Each card links to a deeper page.</p>
+    </header>
+
+    <div class="npc-grid">
+      <!-- Card 1: Electricity -->
+      <article class="npc-card" data-reveal="up" style="--d:.05s">
+        <div class="npc-card__bg npc-card__bg--1"></div>
+        <div class="npc-card__icon" aria-hidden="true">
+          <!-- bolt icon -->
+          <svg viewBox="0 0 24 24"><path d="M13 2 3 14h7l-1 8 12-14h-7l2-6Z" fill="currentColor"/></svg>
+        </div>
+        <h3 class="npc-card__title">NEPLAN Electricity</h3>
+        <p class="npc-card__text">Analysis, planning & simulation for electrical networks.</p>
+        <div class="npc-card__cta">
+          <a class="npc-btn npc-btn--primary" href="/neplan-electricity/">Learn more</a>
+        </div>
+      </article>
+
+      <!-- Card 2: Gas, Water, Heating -->
+      <article class="npc-card" data-reveal="up" style="--d:.1s">
+        <div class="npc-card__bg npc-card__bg--2"></div>
+        <div class="npc-card__icon" aria-hidden="true">
+          <!-- droplet icon -->
+          <svg viewBox="0 0 24 24"><path d="M12 2S5 10 5 14a7 7 0 1 0 14 0C19 10 12 2 12 2Z" fill="currentColor"/></svg>
+        </div>
+        <h3 class="npc-card__title">NEPLAN Gas, Water, &amp; Heating</h3>
+        <p class="npc-card__text">Model and simulate multi-utility networks with ease.</p>
+        <div class="npc-card__cta">
+          <a class="npc-btn npc-btn--primary" href="/neplan-gas-water-heating/">Learn more</a>
+        </div>
+      </article>
+
+      <!-- Card 3: Asset Management -->
+      <article class="npc-card" data-reveal="up" style="--d:.25s">
+        <div class="npc-card__bg npc-card__bg--5"></div>
+        <div class="npc-card__icon" aria-hidden="true">
+          <!-- cube icon (assets) -->
+          <svg viewBox="0 0 24 24"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5Zm0 2.3L19 7l-7 3.7L5 7l7-2.7Zm-7 6V17.1L12 21v-7.3L5 10.3Zm16 0L12 13.7V21l7-3.9V10.3Z" fill="currentColor"/></svg>
+        </div>
+        <h3 class="npc-card__title">NEPLAN Asset Management</h3>
+        <p class="npc-card__text">Plan, track, and optimise asset reliability.</p>
+        <div class="npc-card__cta">
+          <a class="npc-btn npc-btn--primary" href="/neplan-asset-management/">Learn more</a>
+        </div>
+      </article>
+
+      <!-- Card 4: Anywhere -->
+      <article class="npc-card" data-reveal="up" style="--d:.15s">
+        <div class="npc-card__bg npc-card__bg--3"></div>
+        <div class="npc-card__icon" aria-hidden="true">
+          <!-- cloud icon -->
+          <svg viewBox="0 0 24 24"><path d="M7 18h10a4 4 0 1 0-.7-7.94A6 6 0 0 0 5 11a4 4 0 0 0 2 7Z" fill="currentColor"/></svg>
+        </div>
+        <h3 class="npc-card__title">NEPLAN Anywhere</h3>
+        <p class="npc-card__text">Browser-based UI for field & office on the go.</p>
+        <div class="npc-card__cta">
+          <a class="npc-btn npc-btn--primary" href="/neplan-anywhere/">Learn more</a>
+        </div>
+      </article>
+
+      
+      <!-- Card 5: Cloud -->
+      <article class="npc-card" data-reveal="up" style="--d:.35s">
+        <div class="npc-card__bg npc-card__bg--7"></div>
+        <div class="npc-card__icon" aria-hidden="true">
+          <!-- cloud icon -->
+          <svg viewBox="0 0 24 24"><path d="M7 18h10a4 4 0 1 0-.7-7.94A6 6 0 0 0 5 11a4 4 0 0 0 2 7Z" fill="currentColor"/></svg>
+        </div>
+        <h3 class="npc-card__title">NEPLAN Cloud</h3>
+        <p class="npc-card__text">Scalable, collaborative cloud-based NEPLAN.</p>
+        <div class="npc-card__cta">
+          <a class="npc-btn npc-btn--primary" href="/neplan-cloud/">Learn more</a>
+        </div>
+      </article>
+
+
+      <!-- Card 6: OEM / SaaS Webservice -->
+      <article class="npc-card" data-reveal="up" style="--d:.3s">
+        <div class="npc-card__bg npc-card__bg--6"></div>
+        <div class="npc-card__icon" aria-hidden="true">
+          <!-- server icon -->
+          <svg viewBox="0 0 24 24"><path d="M4 3h16v6H4V3Zm0 6h16v6H4V9Zm0 6h16v6H4v-6Zm3-9h4v2H7V6Zm0 6h4v2H7v-2Zm0 6h4v2H7v-2Z" fill="currentColor"/></svg>
+        </div>
+        <h3 class="npc-card__title">NEPLAN OEM / SaaS Webservice</h3>
+        <p class="npc-card__text">Embed NEPLAN analytics via APIs.</p>
+        <div class="npc-card__cta">
+          <a class="npc-btn npc-btn--primary" href="/neplan-integration-oem-sas/">Learn more</a>
+        </div>
+      </article>
+      
+      <!-- Card 7: Research -->
+      <article class="npc-card" data-reveal="up" style="--d:.4s">
+        <div class="npc-card__bg npc-card__bg--8"></div>
+        <div class="npc-card__icon" aria-hidden="true">
+          <!-- beaker icon -->
+          <svg viewBox="0 0 24 24"><path d="M7 2h10v2h-1v5.1l-5 7.9-5-7.9V4H7V2Zm3 4v3l2 3.2L14 9V6h-4Zm-3 12h10v2H7v-2Z" fill="currentColor"/></svg>
+        </div>
+        <h3 class="npc-card__title">NEPLAN Research</h3>
+        <p class="npc-card__text">Advanced tools for academic & R&amp;D studies.</p>
+        <div class="npc-card__cta">
+          <a class="npc-btn npc-btn--primary" href="/neplan-research/">Learn more</a>
+        </div>
+      </article>
+      <!-- Card 8: Additional Solutions -->
+      <article class="npc-card" data-reveal="up" style="--d:.2s">
+        <div class="npc-card__bg npc-card__bg--4"></div>
+        <div class="npc-card__icon" aria-hidden="true">
+          <!-- puzzle icon -->
+          <svg viewBox="0 0 24 24"><path d="M7 3h4v3a2 2 0 1 0 2 0V3h4v4h3v4h-3a2 2 0 1 0 0 2h3v4h-4v3h-4v-3a2 2 0 1 0-2 0v3H7v-4H4v-4h3a2 2 0 1 0 0-2H4V7h3V3Z" fill="currentColor"/></svg>
+        </div>
+        <h3 class="npc-card__title">Additional Solutions</h3>
+        <p class="npc-card__text">Interfaces, automation & asset dashboards.</p>
+        <div class="npc-card__cta">
+          <a class="npc-btn npc-btn--primary" href="/neplan-additional-solutions/">Learn more</a>
+        </div>
+      </article>
+
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- 
+
+<section class="carl-verticalizations-section">
+  <div class="container">
+    <div class="carl-cards-grid">
+
+      <a href="/facility" class="carl-card">
+        <img src="{% static 'images/banner/facility.jpg' %}" alt="Facility" class="carl-card-img">
+        <div class="carl-card-content">
+          <h3>FACILITY</h3>
+        </div>
+      </a>
+
+      <a href="/transport" class="carl-card">
+        <img src="{% static 'images/banner/transport.jpg' %}" alt="Transport" class="carl-card-img">
+        <div class="carl-card-content">
+          <h3>TRANSPORT</h3>
+        </div>
+      </a>
+
+      <a href="/factory" class="carl-card">
+        <img src="{% static 'images/banner/factory.jpg' %}" alt="Factory" class="carl-card-img">
+        <div class="carl-card-content">
+          <h3>FACTORY</h3>
+        </div>
+      </a>
+
+      <a href="/city" class="carl-card">
+        <img src="{% static 'images/banner/city.jpg' %}" alt="City" class="carl-card-img">
+        <div class="carl-card-content">
+          <h3>CITY</h3>
+        </div>
+      </a>
+
+      <a href="/healthcare" class="carl-card">
+        <img src="{% static 'images/banner/healthcare.jpg' %}" alt="BuHEALTHCARE" class="carl-card-img">
+        <div class="carl-card-content">
+          <h3>HEALTHCARE</h3>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+    <section class="cta-mobility">
+        <div class="cta-wrap-mobility">
+            <h2 class="cta-title-mobility reveal-mobility" style="--delay-mobility: 0ms;">
+                Ready to Elevate Your Asset Strategy?
+            </h2>
+
+            <p class="cta-text-mobility reveal-mobility" style="--delay-mobility: 120ms;">
+                CARL isn’t just software-it’s your strategic partner in operational excellence. Let us help you unlock
+                the full potential of your assets with a suite that’s complete, compliant, and built for your sector.
+            </p>
+
+            <div class="cta-buttons reveal-mobility">
+                <a href="#" class="btn btn-primary js-open-demo">Request a Demo</a>
+                <a href="#" class="btn btn-secondary js-open-demo"> Download Technical Datasheet</a>
+                <a href="#" class="btn btn-secondary js-open-demo"> Explore Integration
+                    Options</a>
+            </div>
+        </div>
+    </section> -->
+<script>
+(function(){
+  const els = document.querySelectorAll('.neplan-products-cards [data-reveal]');
+  if(!('IntersectionObserver' in window)){ els.forEach(e=>e.classList.add('is-visible')); return; }
+  const io = new IntersectionObserver((entries, obs)=>{
+    entries.forEach(en=>{
+      if(en.isIntersecting){
+        en.target.classList.add('is-visible');
+        obs.unobserve(en.target);
+      }
+    });
+  }, {root:null, rootMargin:'0px 0px -8% 0px', threshold:.15});
+  els.forEach(el=>io.observe(el));
+})();
+</script>
+
+    <script>
+        /* IntersectionObserver reveal - shows elements when they enter the viewport,
+           hides them again when they leave (works on scroll down and up). */
+        (function () {
+            const els = document.querySelectorAll('.reveal-mobility');
+            if (!('IntersectionObserver' in window) || !els.length) {
+                els.forEach(el => el.classList.add('is-visible-mobility'));
+                return;
+            }
+
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible-mobility');
+                    } else {
+                        entry.target.classList.remove('is-visible-mobility');
+                    }
+                });
+            }, { threshold: 0.18 });
+
+            els.forEach(el => io.observe(el));
+        })();
+    </script>
+
+    <script>
+        (function () {
+            const els = document.querySelectorAll('.ov-reveal-up, .ov-reveal-left, .ov-reveal-right');
+            if (!els.length) return;
+
+            // Optional per-item delay via data-reveal-delay="180ms"
+            els.forEach(el => {
+                const d = el.getAttribute('data-reveal-delay');
+                if (d) el.style.transitionDelay = /^\d+$/.test(d) ? `${d}ms` : d;
+            });
+
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(({ target, isIntersecting }) => {
+                    if (isIntersecting) target.classList.add('in-view');
+                    else target.classList.remove('in-view'); // replay when scrolling back
+                });
+            }, { threshold: 0.18 });
+
+            els.forEach(el => io.observe(el));
+        })();
+    </script>
+
+    <script>
+        (function () {
+            const root = document.getElementById('nesSlider');
+            if (!root) return;
+
+            const track = root.querySelector('.nes-track');
+            const dots = [...root.querySelectorAll('.nes-dot')];
+            const slides = root.querySelectorAll('.nes-slide');
+            const count = slides.length;
+
+            let index = 0;
+            let timer = null;
+
+            function go(i) {
+                index = (i + count) % count;
+                track.style.transform = `translateX(${-100 * index}%)`;
+                dots.forEach((d, di) => d.classList.toggle('is-active', di === index));
+            }
+
+            function play() {
+                stop();
+                timer = setInterval(() => go(index + 1), 3000);
+            }
+            function stop() {
+                if (timer) { clearInterval(timer); timer = null; }
+            }
+
+            // dot click
+            dots.forEach(d => d.addEventListener('click', e => {
+                const i = parseInt(d.dataset.slide, 10) || 0;
+                go(i);
+                play(); // continue autoplay after jump
+            }));
+
+            // pause on hover/focus inside the viewport
+            ['mouseenter', 'focusin'].forEach(ev => root.addEventListener(ev, stop));
+            ['mouseleave', 'focusout'].forEach(ev => root.addEventListener(ev, play));
+
+            // kick off
+            go(0);
+            play();
+        })();
+    </script>
+    {% include 'footer.html' %}
+    <!-- Link to Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+
+
+    <script src="{% static 'js/header.js'%}"></script>
+    <script defer src="{% static 'js/demo_form.js' %}"></script>
+
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKQV8LKX" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+</body>
+
+</html>

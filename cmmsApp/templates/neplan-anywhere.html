@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEPLAN-Electricity</title>
+  <!--=============== CSS ===============-->
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-TKQV8LKX');</script>
+  <!-- End Google Tag Manager -->
+  <link rel="stylesheet" href="{% static 'css/consult-block.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/neplan-electricity.css' %}">
+
+
+    <link rel="stylesheet" href="{% static 'css/neplan-gas-water-heat.css' %}">
+  <link rel="icon" href="{% static 'images/logo1.png' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+
+
+
+</head>
+
+<body>
+    {% include 'header.html' %}
+    <section class="neplan-electricity-slide" aria-label="NEPLAN subproduct slideshow">
+        <div class="nes-viewport" id="nesSlider">
+            <div class="nes-track">
+                <!-- Slide 1 -->
+                <article class="nes-slide"
+                    style="background-image: url('../static/images/products/anywhere/neplan1.avif');">
+                    <div class="nes-overlay"></div>
+                    <div class="nes-content">
+                        <p class="eyebrow-neplan-what-we-bring" style="margin-left: -25px;"><span
+                                style="color: red; ">NEPLAN </span>ANYWHERE</p>
+                        <h1 class="nes-title">Geodata &amp;<br> Smart-Meter Integration</h1>
+                        <p class="nes-sub">
+                            Combine GIS data with measurement/smart-meter inputs via MDM systems for accurate network modeling.</p>
+                        <a href="contact/" class="nes-cta">Contact us <span>↗</span></a>
+                    </div>
+                </article>
+
+                <!-- Slide 2 -->
+                <article class="nes-slide"
+                    style="background-image: url('../static/images/products/anywhere/neplan2.avif');">
+                    <div class="nes-overlay"></div>
+                    <div class="nes-content">
+                        <p class="eyebrow-neplan-what-we-bring" style="margin-left: -25px;"><span
+                                style="color: red; ">NEPLAN </span>ANYWHERE</p>
+                        <h1 class="nes-title">Online MV/LV  <br>Monitoring</h1>
+                        <p class="nes-sub">
+                            Enable real-time tracking of voltages, loads, and performance metrics for better operational control.</p>
+                        <a href="contact/" class="nes-cta">Contact us <span>↗</span></a>
+                    </div>
+                </article>
+
+                <!-- Slide 3 (no image → dark gradient fallback) -->
+                <article class="nes-slide" style="background-image: url('../static/images/products/anywhere/neplan3.avif');">
+                    <div class="nes-overlay"></div>
+                    <div class="nes-content">
+                        <p class="eyebrow-neplan-what-we-bring" style="margin-left: -25px;"><span
+                                style="color: red; ">NEPLAN </span>ANYWHERE</p>
+                        <h1 class="nes-title">Connection Request
+
+                            <br>Management
+                        </h1>
+                        <p class="nes-sub">
+                            Streamline assessment of new connections (e.g., solar, EV charging) with ERP system integration.</p>
+                        <a href="contact/" class="nes-cta">Contact us <span>↗</span></a>
+                    </div>
+                </article>
+
+
+                <!-- Slide 3 (no image → dark gradient fallback) -->
+                <article class="nes-slide" style="background-image: url('../static/images/products/anywhere/neplan4.avif');">
+                    <div class="nes-overlay"></div>
+                    <div class="nes-content">
+                        <p class="eyebrow-neplan-what-we-bring" style="margin-left: -25px;"><span
+                                style="color: red; ">NEPLAN </span>ANYWHERE</p>
+                        <h1 class="nes-title">Mobile-Friendly
+
+                            <br>  Interface
+                        </h1>
+                        <p class="nes-sub">
+                            Perform inspections, approvals, and assessments on-site via tablet or smartphone access.</p>
+                        <a href="contact/" class="nes-cta">Contact us <span>↗</span></a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Vertical dots (pager) -->
+            <nav class="nes-dots" aria-label="Slide navigation">
+                <button class="nes-dot is-active" aria-label="Go to slide 1" data-slide="0"></button>
+                <button class="nes-dot" aria-label="Go to slide 2" data-slide="1"></button>
+                <button class="nes-dot" aria-label="Go to slide 3" data-slide="2"></button>
+                <button class="nes-dot" aria-label="Go to slide 4" data-slide="3"></button>
+            </nav>
+        </div>
+    </section>
+
+
+
+    <section class="section-neplan-overview" aria-labelledby="neplan-overview-title">
+        <div class="container-neplan-overview">
+
+            <header class="header-neplan-overview ov-reveal-up">
+                <p class="eyebrow-neplan-overview">Overview</p>
+                <h2 id="neplan-overview-title" class="title-neplan-overview">
+<span style="color: rgb(190, 2, 2);"> NEPLAN</span> ANYWHERE - browser-based tool for operations, monitoring, connection management & request assessments
+                </h2>
+                <p class="lead-neplan-overview">
+                    NEPLAN Anywhere is a browser-based add-on tool with a user-friendly, simplified graphical interface, designed to support the day-to-day tasks of utilities. It complements the full NEPLAN 10 / 360 planning tools and serves as a lighter, always-accessible interface for operations, monitoring, connection-management, and request assessments. </p>
+                </p>
+               
+            </header>
+            <div class="grid-neplan-overview">
+    <!-- Left - Key capabilities -->
+    <ul class="list-neplan-overview" role="list">
+        <li class="ov-item-neplan-overview ov-reveal-left" data-reveal-delay="0ms">
+            <span class="ov-icon-neplan-overview" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                    <path d="M9.2 16.2 4.9 11.9l-1.4 1.4 5.7 5.7L20.6 7.6l-1.4-1.4z" />
+                </svg>
+            </span>
+            <div class="ov-body-neplan-overview">
+                <h3>Geodata & Smart-Meter Integration</h3>
+                <p>Integration of GIS data and smart-meter data via MDM systems for improved accuracy. </p>
+            </div>
+        </li>
+
+        <li class="ov-item-neplan-overview ov-reveal-left" data-reveal-delay="120ms">
+            <span class="ov-icon-neplan-overview" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                    <path d="M9 2h6v2H9zM4 6h16v2H4zm0 4h16v2H4zm0 4h10v2H4zm0 4h7v2H4z" />
+                </svg>
+            </span>
+            <div class="ov-body-neplan-overview">
+                <h3>Online MV/LV Monitoring</h3>
+                <p>Real-time tracking of voltages, loads, and other performance metrics for medium- and low-voltage networks.</p>
+            </div>
+        </li>
+
+        <li class="ov-item-neplan-overview ov-reveal-left" data-reveal-delay="240ms">
+            <span class="ov-icon-neplan-overview" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                    <path d="M3 3h18v2H3zm2 4h14v2H5zm-2 4h18v2H3zm2 4h14v2H5zm-2 4h18v2H3z" />
+                </svg>
+            </span>
+            <div class="ov-body-neplan-overview">
+                <h3>Connection Request Management</h3>
+                <p>Assessment & management of solar PV or EV-charging connection requests with ERP integration. </p>
+            </div>
+        </li>
+
+        <li class="ov-item-neplan-overview ov-reveal-left" data-reveal-delay="360ms">
+            <span class="ov-icon-neplan-overview" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                    <path d="M4 5h16v6H4zM4 13h7v6H4zm9 0h7v6h-7z" />
+                </svg>
+            </span>
+            <div class="ov-body-neplan-overview">
+                <h3>Mobile-Friendly Interface</h3>
+                <p>Supports inspections, approvals, and assessments on-site via tablets or smartphones.</p>
+            </div>
+        </li>
+
+        <li class="ov-item-neplan-overview ov-reveal-left" data-reveal-delay="480ms">
+            <span class="ov-icon-neplan-overview" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2 7 12h5v10l5-10h-5z" />
+                </svg>
+            </span>
+            <div class="ov-body-neplan-overview">
+                <h3>Data Hub & Integration</h3>
+                <p>Acts as a data hub via web services, enabling data sharing with external systems (GIS, MDM, ERP).</p>
+            </div>
+        </li>
+    </ul>
+
+    <!-- Right - NEPLAN Anywhere Overview -->
+    <aside class="card-neplan-overview ov-reveal-right" data-reveal-delay="160ms">
+        <div class="card-chip-neplan-overview"><span style="color: red;">NEPLAN</span> ANYWHERE</div>
+        <h3 class="card-title-neplan-overview">Browser-Based Add-On Tool</h3>
+        <p class="card-text-neplan-overview">
+            A simplified, always-accessible interface for operations, monitoring, and connection management. Works on all modern browsers and integrates with existing NEPLAN systems.
+        </p>
+        <a class="card-link-neplan-overview" href="https://neplan.ch/neplanproduct/neplan-anywhere/" target="_blank" rel="noopener">Learn more ↗</a>
+
+        <!-- Image for NEPLAN Anywhere -->
+        <figure class="card-illustration-neplan-overview">
+            <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200"
+                alt="NEPLAN Anywhere Interface" loading="lazy">
+        </figure>
+    </aside>
+</div>
+
+</section>
+    
+<section class="section-neplan-key-features" aria-labelledby="nkf-title">
+  <div class="container-neplan-key-features">
+    <header class="nkf-head ov-reveal-up" data-reveal-delay="0ms">
+      <p class="nkf-eyebrow">Key Use Cases</p>
+      <h2 id="nkf-title" class="nkf-title">Where NEPLAN Anywhere Delivers Value</h2>
+      <p class="nkf-lead">
+        Browser-based tools for day-to-day utility work: monitor, assess connections, make field decisions, and integrate data.
+      </p>
+    </header>
+
+    <ul class="nkf-grid" role="list">
+      <!-- 1 -->
+      <li class="nkf-card ov-reveal-left" data-reveal-delay="0ms">
+        <div class="nkf-card-head">
+           <span class="nkf-modules-icon" aria-hidden="true">
+            <span class="nkf-modules-bullet"></span>
+          </span>
+          <h3 class="nkf-card-title">Online Monitoring</h3>
+        </div>
+        <p class="nkf-card-text">
+          Retrieve smart-meter / measurement data and visualize live or near-real-time metrics (voltages, loadings, etc.); detect limit violations in LV/MV networks and generate alerts.
+      
+        </p>
+      </li>
+
+      <!-- 2 -->
+      <li class="nkf-card ov-reveal-left" data-reveal-delay="120ms">
+        <div class="nkf-card-head">
+           <span class="nkf-modules-icon" aria-hidden="true">
+            <span class="nkf-modules-bullet"></span>
+          </span>
+          <h3 class="nkf-card-title">Connection Request Assessment</h3>
+        </div>
+        <p class="nkf-card-text">
+          Evaluate feasibility of new connections (e.g., solar PV, EV chargers) under current network conditions; provide quick feedback (green/yellow/red) based on voltage and thermal loading criteria-saving time for utilities and applicants.
+         
+        </p>
+      </li>
+
+      <!-- 3 -->
+      <li class="nkf-card ov-reveal-left" data-reveal-delay="240ms">
+        <div class="nkf-card-head">
+           <span class="nkf-modules-icon" aria-hidden="true">
+            <span class="nkf-modules-bullet"></span>
+          </span>
+          <h3 class="nkf-card-title">Connection Request Management</h3>
+        </div>
+        <p class="nkf-card-text">
+          Track requests end-to-end (submitted, pending, approved, rejected). Import or update from ERP systems; maintain time-stamped records and archive assessments for future reference.
+          
+        </p>
+      </li>
+
+      <!-- 4 -->
+      <li class="nkf-card ov-reveal-left" data-reveal-delay="360ms">
+        <div class="nkf-card-head">
+           <span class="nkf-modules-icon" aria-hidden="true">
+            <span class="nkf-modules-bullet"></span>
+          </span>
+          <h3 class="nkf-card-title">Mobile / On-site Decision Making</h3>
+        </div>
+        <p class="nkf-card-text">
+          Use tablets or smartphones to view network topology, run basic analyses, and complete assessments on the spot-ideal when permissions or decisions must be made outside the office.
+          
+        </p>
+      </li>
+
+      <!-- 5 -->
+      <li class="nkf-card ov-reveal-left" data-reveal-delay="480ms">
+        <div class="nkf-card-head">
+           <span class="nkf-modules-icon" aria-hidden="true">
+            <span class="nkf-modules-bullet"></span>
+          </span>
+          <h3 class="nkf-card-title">Integration with Other Systems</h3>
+        </div>
+        <p class="nkf-card-text">
+          Act as a data interface (web services) with GIS, MDM, ERP, SCADA, etc., to share and update data across systems-reducing duplication and improving consistency.
+         
+        </p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+    <!-- ===========================
+     Why Choose NEPLAN Electricity?
+     Simple bullet list (no cards)
+     =========================== -->
+    <section class="neplan-li-ul-points" aria-labelledby="why-neplan-title">
+        <div class="neplan-li-ul-points__inner">
+            <h3 id="why-neplan-title" class="neplan-li-ul-points__title ov-reveal-left">
+                Why Use NEPLAN Anywhere
+            </h3>
+
+            <ul class="neplan-li-ul-points__list ov-reveal-left" role="list">
+                 <li>Speeds up routine operations (approving connections, monitoring networks) without needing full-feature software client.</li>
+    <li>Improves responsiveness: real-time visibility and decision making, fewer delays.</li>
+            <li>Empowers field teams and non-specialists to make informed decisions with minimal training.</li>
+            <li>Increases transparency and customer satisfaction (for example via customer portals for connection assessment).</li>
+            <li>Helps avoid network overloads or violations by catching issues early through monitoring.</li>
+</ul>
+        </div>
+    </section>
+
+
+    {% include "components/contact_block.html" %}
+
+    <script>
+        (function () {
+            const els = document.querySelectorAll('.ov-reveal-up, .ov-reveal-left, .ov-reveal-right');
+            if (!els.length) return;
+
+            // Optional per-item delay via data-reveal-delay="180ms"
+            els.forEach(el => {
+                const d = el.getAttribute('data-reveal-delay');
+                if (d) el.style.transitionDelay = /^\d+$/.test(d) ? `${d}ms` : d;
+            });
+
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(({ target, isIntersecting }) => {
+                    if (isIntersecting) target.classList.add('in-view');
+                    else target.classList.remove('in-view'); // replay when scrolling back
+                });
+            }, { threshold: 0.18 });
+
+            els.forEach(el => io.observe(el));
+        })();
+    </script>
+
+    <script>
+        (function () {
+            const root = document.getElementById('nesSlider');
+            if (!root) return;
+
+            const track = root.querySelector('.nes-track');
+            const dots = [...root.querySelectorAll('.nes-dot')];
+            const slides = root.querySelectorAll('.nes-slide');
+            const count = slides.length;
+
+            let index = 0;
+            let timer = null;
+
+            function go(i) {
+                index = (i + count) % count;
+                track.style.transform = `translateX(${-100 * index}%)`;
+                dots.forEach((d, di) => d.classList.toggle('is-active', di === index));
+            }
+
+            function play() {
+                stop();
+                timer = setInterval(() => go(index + 1), 3000);
+            }
+            function stop() {
+                if (timer) { clearInterval(timer); timer = null; }
+            }
+
+            // dot click
+            dots.forEach(d => d.addEventListener('click', e => {
+                const i = parseInt(d.dataset.slide, 10) || 0;
+                go(i);
+                play(); // continue autoplay after jump
+            }));
+
+            // pause on hover/focus inside the viewport
+            ['mouseenter', 'focusin'].forEach(ev => root.addEventListener(ev, stop));
+            ['mouseleave', 'focusout'].forEach(ev => root.addEventListener(ev, play));
+
+            // kick off
+            go(0);
+            play();
+        })();
+    </script>
+    {% include 'footer.html' %}
+    <!-- Link to Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/main.js'%}"></script>
+    <script>
+(function(){
+  const root   = document.getElementById('nesSlider');
+  if (!root) return;
+  const track  = root.querySelector('.nes-track');
+  const slides = [...track.children];
+  const dots   = [...root.querySelectorAll('.nes-dot')];
+  const total  = slides.length;
+
+  let index = 0, timer;
+
+  function goTo(i){
+    index = (i + total) % total;
+    track.style.transform = `translateX(-${index * 100}%)`;
+    dots.forEach((d,k)=>d.classList.toggle('is-active', k===index));
+  }
+
+  function next(){ goTo(index + 1); }
+  function start(){ timer = setInterval(next, 6000); }
+  function stop(){ clearInterval(timer); }
+
+  dots.forEach(btn => btn.addEventListener('click', () => { goTo(+btn.dataset.slide); stop(); start(); }));
+  root.addEventListener('mouseenter', stop);
+  root.addEventListener('mouseleave', start);
+  window.addEventListener('keydown', (e)=>{
+    if (e.key === 'ArrowRight') { stop(); next(); start(); }
+    if (e.key === 'ArrowLeft')  { stop(); goTo(index-1); start(); }
+  });
+
+  // initial position
+  goTo(0);
+  start();
+})();
+</script>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKQV8LKX" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+</body>
+
+</html>

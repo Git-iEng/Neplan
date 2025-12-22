@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEPLAN-Services</title>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-TKQV8LKX');</script>
+  <!-- End Google Tag Manager -->
+  <!--=============== CSS ===============-->
+  <link rel="stylesheet" href="{% static 'css/consult-block.css' %}">
+
+  <link rel="stylesheet" href="{% static 'css/services.css' %}">
+  <link rel="icon" href="{% static 'images/logo1.png' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+
+
+</head>
+
+<body>
+  {% include 'header.html' %}
+<section class="neplan-electricity-slide" aria-label="NEPLAN services hero">
+  <div class="nes-viewport">
+    <!-- overlay is added with CSS ::before -->
+    <header class="nsv-hero">
+      <p class="nsv-kicker">Services</p>
+      <h1 class="nsv-title">Where iEngineering adds value beyond the licence.</h1>
+      <p class="nsv-sub">
+        We don’t just sell NEPLAN—we help you deploy it, master it, and get measurable results through
+        consulting, training, and local expert support.
+      </p>
+      <div class="cta-buttons">
+        <a href="#" class="btn btn-primary">Request a Demo</a>
+        <a href="/product/" class="btn btn-secondary">Learn more</a>
+      </div>
+    </header>
+  </div>
+</section>
+  <!-- SERVICES - iEngineering x NEPLAN -->
+  <section class="neplan-services">
+
+   
+
+    <!-- Section: Training & Workshops -->
+    <section id="training" class="nsv-block nsv-block--split">
+      <div class="nsv-block__media" data-reveal="left">
+        <div class="nsv-badge">Training &amp; Workshops</div>
+        <img src="{% static '/images/services/neplan1.avif' %}"
+          alt="Hands-on training" />
+      </div>
+
+      <div class="nsv-block__content" data-reveal="right">
+        <h2>Hands-on skills for planners, protection, and operations-beginner to advanced.</h2>
+
+        <h3 class="nsv-eyebrow">What you get</h3>
+        <ul class="nsv-list nsv-list--check">
+          <li><strong>Role-based tracks:</strong> Essentials (GUI &amp; modelling), Practitioner (LF/SC, protection,
+            reliability, harmonics), Specialist (renewables-steady state &amp; dynamics).</li>
+          <li><strong>Real data, real outcomes:</strong> Labs built on your network and scenarios.</li>
+          <li><strong>Flexible delivery:</strong> On-site or online; 1–3 day agendas; cohort or 1:1 clinics.</li>
+          <li><strong>Takeaways:</strong> Project files, templates, checklists, and a certificate of completion.</li>
+        </ul>
+
+        <h3 class="nsv-eyebrow">Typical modules</h3>
+        <p class="nsv-muted">
+          Introduction / GUI • Load Flow & Short-Circuit • Protection Coordination • Renewables & Storage
+          (steady state & dynamics) • Reporting & data exchange  • Arc Flash  •  Motor Starting  • Harmonic Analysis
+        </p>
+
+        <div class="nsv-cta" style="margin-top: 20px;">
+          <a href="" class="nsv-btn js-open-demo nsv-btn--primary">Request a tailored course outline</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Technical Support -->
+    <section id="support" class="nsv-block nsv-block--split nsv-block--invert">
+     
+
+      <div class="nsv-block__content" data-reveal="left">
+        <h2>Local experts, backed by the NEPLAN ecosystem.</h2>
+        <p class="nsv-lead">
+          Keep studies moving with practical help on models, interfaces, automation, and workflow tuning.
+        </p>
+
+        <h3 class="nsv-eyebrow">What’s included</h3>
+        <ul class="nsv-list nsv-list--dot">
+          <li><strong>Helpdesk & guidance:</strong> Modelling questions, error triage, version/config advice.</li>
+          <li><strong>Model health checks:</strong> Topology, data quality, libraries, and case consistency.</li>
+          <li><strong>Integration assistance:</strong> GIS/SCADA/MDM data flows, web services & APIs.</li>
+          <li><strong>Environment support:</strong> NEPLAN 10 (desktop/intranet) and NEPLAN 360 (cloud).</li>
+          <li><strong>Performance & automation:</strong> Batch runs, schedulers, and report pipelines.</li>
+        </ul>
+        <div class="nsv-cta">
+          <a href="" class="nsv-btn js-open-demo nsv-btn--primary">Request a tailored course outline</a>
+        </div>
+
+        </div>
+      </div>
+       <div class="nsv-block__media" data-reveal="right">
+        <div class="nsv-badge">Technical Support</div>
+        <img src="{% static '/images/services/neplan2.avif' %}"
+          alt="Technical support" />
+      </div>
+    </section>
+<!--     
+<div class="nsv-block__content" data-reveal="left">
+     <h3 class="nsv-eyebrow">Service tiers</h3>
+        <div class="nsv-cards">
+          <article class="nsv-card">
+            <h4>Standard</h4>
+            <p>Business-hours support + quarterly model review.</p>
+          </article>
+          <article class="nsv-card">
+            <h4>Enhanced</h4>
+            <p>Extended hours, monthly checks, and priority queue.</p>
+          </article>
+          <article class="nsv-card">
+            <h4>Enablement bundle</h4>
+            <p>Reusable study cases, report layouts, import/export maps.</p>
+          </article>
+        </div>
+
+        <h3 class="nsv-eyebrow">Onboarding (30–60–90)</h3>
+        <ol class="nsv-steps">
+          <li><span>Days 0–30</span> access & model snapshot → quick wins</li>
+          <li><span>Days 31–60</span> interface setup (GIS/MDM) → automation pilots</li>
+          <li><span>Days 61–90</span> performance tuning → handover docs & training</li>
+        </ol>
+
+        
+</div> -->
+
+    <!-- Section: Consultancy Services -->
+    <section id="consult" class="nsv-block nsv-block--split">
+      <div class="nsv-block__media" data-reveal="left">
+        <div class="nsv-badge">Consultancy Services</div>
+        <img src="{% static '/images/services/neplan3.avif' %}"
+          alt="Consultancy services" />
+      </div>
+
+      <div class="nsv-block__content" data-reveal="right">
+        <h2>Specialist studies delivered with clear, defensible recommendations.</h2>
+
+        <h3 class="nsv-eyebrow">Study areas</h3>
+        <div class="nsv-grid nsv-grid--two">
+          <ul class="nsv-list nsv-list--check">
+            <li><strong>Renewables & Storage:</strong> Hosting capacity (PV/EV), placement & sizing, operational
+              strategies.</li>
+            <li><strong>Planning & Reliability:</strong> Distribution reinforcement options, probabilistic planning,
+              losses.</li>
+            <li><strong>Transmission & Stability:</strong> Transfer capability, voltage stability, system dynamics,
+              HVDC/FACTS.</li>
+          </ul>
+          <ul class="nsv-list nsv-list--check">
+            <li><strong>Protection & Power Quality:</strong> Settings/coordination, insulation coordination, harmonics &
+              filter design.</li>
+            <li><strong>Industrial Networks:</strong> Cable dimensioning, motor-starting, selectivity, safety &
+              compliance.</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </section>
+
+
+       <section id="consult" class="nsv-block nsv-block--split">
+      <div class="nsv-block__media" data-reveal="left">
+        <h3 class="nsv-eyebrow">IT-enabled workflows</h3>
+        <ul class="nsv-list nsv-list--dot">
+          <li>GIS-driven model build & auto-merge</li>
+          <li>Smart-meter/MDM integration for online/forecast analysis</li>
+          <li>Automated study pipelines (server-side runs, exports, dashboards)</li>
+        </ul>
+      </div>
+
+      <div class="nsv-block__content" data-reveal="right">
+      
+<h3 class="nsv-eyebrow">Deliverables</h3>
+        <ul class="nsv-list nsv-list--dot">
+          <li>Executive summary with actions, CAPEX/OPEX, and risk</li>
+          <li>NEPLAN project files & reusable study cases</li>
+          <li>Settings, plots, and export packs (CGMES/CIM/CSV/Excel)</li>
+        </ul>
+      </div>
+    </section>
+
+        
+
+        
+
+        
+    <!-- Why iEngineering -->
+    <section class="nsv-why" data-reveal="up">
+      <h2>Why iEngineering</h2>
+      <div class="nsv-cards nsv-cards--wide">
+        <article class="nsv-card nsv-card--accent">
+          <h4>Local partner</h4>
+          <p>Support, training, and integration close to your team.</p>
+        </article>
+        <article class="nsv-card nsv-card--accent">
+          <h4>End-to-end delivery</h4>
+          <p>Data onboarding → studies → handover → enablement.</p>
+        </article>
+        <article class="nsv-card nsv-card--accent">
+          <h4>Operational focus</h4>
+          <p>Templates and repeatable workflows that shorten cycles and reduce risk.</p>
+        </article>
+      </div>
+
+      <div id="talk" class="nsv-cta nsv-cta--center">
+        <a href="/contact/" class="nsv-btn nsv-btn--primary nsv-btn--xl">Talk to us about your network challenges</a>
+      </div>
+    </section>
+
+  </section>
+
+  {% include 'footer.html' %}
+  <!-- Link to Bootstrap JS -->
+  <script>
+    /* Minimal IntersectionObserver reveal (namespaced) */
+    (function () {
+      const els = document.querySelectorAll('.neplan-services [data-reveal]');
+      if (!('IntersectionObserver' in window)) { els.forEach(e => e.classList.add('is-visible')); return; }
+
+      const io = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { root: null, rootMargin: '0px 0px -10% 0px', threshold: .18 });
+
+      els.forEach(el => io.observe(el));
+    })();
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+  <script src="{% static 'js/main.js'%}"></script>
+
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKQV8LKX" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+</body>
+
+</html>

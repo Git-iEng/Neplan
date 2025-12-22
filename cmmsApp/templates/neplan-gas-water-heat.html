@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEPLAN-Gas-Water-Heating</title>
+    <!--=============== CSS ===============-->
+    <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-TKQV8LKX');</script>
+  <!-- End Google Tag Manager -->
+    <link rel="stylesheet" href="{% static 'css/consult-block.css' %}">
+    <link rel="stylesheet" href="{% static 'css/neplan-electricity.css' %}">
+    <link rel="stylesheet" href="{% static 'css/neplan-gas-water-heat.css' %}">
+    <link rel="icon" href="{% static 'images/logo1.png' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+
+
+</head>
+
+<body>
+    {% include 'header.html' %}
+    <section class="neplan-electricity-slide" aria-label="NEPLAN subproduct slideshow">
+        <div class="nes-viewport" id="nesSlider">
+            <div class="nes-track">
+                <!-- Slide 1 -->
+                <article class="nes-slide"
+                    style="background-image: url('../static/images/products/gas-water/neplan1.avif');">
+                    <div class="nes-overlay"></div>
+                    <div class="nes-content">
+                        <p class="eyebrow-neplan-what-we-bring" style="margin-left: -25px;"><span
+                                style="color: red; ">NEPLAN </span>GAS WATER HEATING</p>
+                        <h1 class="nes-title">Integrated and<br>Modular Platform</h1>
+                        <p class="nes-sub">
+                            A customizable platform that allows for multi-network simulations, combining different
+                            systems like electricity, gas, water, and heating/cooling. </p>
+                        <a href="contact/" class="nes-cta">Contact us <span>↗</span></a>
+                    </div>
+                </article>
+
+                <!-- Slide 2 -->
+                <!-- <article class="nes-slide"
+                    style="--bg:url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1600');">
+                    <div class="nes-overlay"></div>
+                    <div class="nes-content">
+                        <p class="eyebrow-neplan-what-we-bring" style="margin-left: -25px;"><span
+                                style="color: red; ">NEPLAN </span>ELECTRICITY</p>
+                        <h1 class="nes-title">Scalable for <br>Large Networks</h1>
+                        <p class="nes-sub">
+                            The ability to efficiently manage and model very large network and pipeline sizes with
+                            numerous nodes and connecting elements. </p>
+                        <a href="contact/" class="nes-cta">Contact us <span>↗</span></a>
+                    </div>
+                </article> -->
+
+                <!-- Slide 3 (no image → dark gradient fallback) -->
+                <article class="nes-slide"
+                    style="background-image: url('../static/images/products/gas-water/neplan3.avif')" ;>
+                    <div class="nes-overlay"></div>
+                    <div class="nes-content">
+                        <p class="eyebrow-neplan-what-we-bring" style="margin-left: -25px;"><span
+                                style="color: red; ">NEPLAN </span>GAS WATER HEATING</p>
+                        <h1 class="nes-title">Advanced
+
+                            <br>Dynamic Modeling
+                        </h1>
+                        <p class="nes-sub">
+                            Provides detailed thermo-hydraulic modeling of flows and pressures, as well as time and
+                            dynamic simulations to analyze network behavior over various periods. </p>
+                        <a href="contact/" class="nes-cta">Contact us <span>↗</span></a>
+                    </div>
+                </article>
+
+
+                <!-- Slide 3 (no image → dark gradient fallback) -->
+                <article class="nes-slide"
+                    style="background-image: url('../static/images/products/gas-water/neplan4.avif')" ;>
+                    <div class="nes-overlay"></div>
+                    <div class="nes-content">
+                        <p class="eyebrow-neplan-what-we-bring" style="margin-left: -25px;"><span
+                                style="color: red; ">NEPLAN </span>GAS WATER HEATING</p>
+                        <h1 class="nes-title">Advanced Data
+
+                            <br> Interoperability
+                        </h1>
+                        <p class="nes-sub">
+                            Supports seamless integration with GIS, databases, and external applications through web
+                            services and APIs for effective data management and sharing.</p>
+                        <a href="contact/" class="nes-cta">Contact us <span>↗</span></a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Vertical dots (pager) -->
+            <nav class="nes-dots" aria-label="Slide navigation">
+                <button class="nes-dot is-active" aria-label="Go to slide 1" data-slide="0"></button>
+                <button class="nes-dot" aria-label="Go to slide 2" data-slide="1"></button>
+                <button class="nes-dot" aria-label="Go to slide 3" data-slide="2"></button>
+                <!-- <button class="nes-dot" aria-label="Go to slide 4" data-slide="3"></button> -->
+            </nav>
+        </div>
+    </section>
+
+
+
+    <section class="section-neplan-overview" aria-labelledby="neplan-overview-title">
+        <div class="container-neplan-overview">
+
+            <header class="header-neplan-overview ov-reveal-up">
+                <p class="eyebrow-neplan-overview">Overview</p>
+                <h2 id="neplan-overview-title" class="title-neplan-overview">
+                    <span style="color: rgb(190, 2, 2);"> NEPLAN</span> GAS, WATER & HEATING/COOLING - modular software
+                    solution for planning, simulation,
+                    optimisation &amp; operation.
+                </h2>
+                <p class="lead-neplan-overview">
+                    NEPLAN Gas, Water & Heating / Cooling is the modular software solution for planning, simulation,
+                    optimisation and operation of non-electrical infrastructure networks. It is designed for network
+                    types such as gas pipelines, water supply and distribution, heating and cooling systems, as well as
+                    district heating/cooling. With its intuitive graphical user interface, NEPLAN enables engineers,
+                    operators, utilities and planners to model, design, analyse and optimise these networks with
+                    precision and efficiency.</p>
+                </p>
+                <p class="lead-neplan-overview"> One of NEPLAN’s distinguishing capabilities is its support for
+                    <strong>integrated energy networks</strong> it is the only tool on the market that allows
+                    simultaneous simulation of electricity, gas, water and heating networks. This lets users study the
+                    interdependencies and interactions between these networks (for example, how gas-fueled heating or
+                    combined heat and power feeds into electricity, or how water cooling/heating loads affect electrical
+                    and thermal systems) in a coherent, mutual-feedback environment.
+                </p>
+                </p>
+            </header>
+
+            <div class="grid-neplan-overview">
+                <!-- Left - Key strengths -->
+                <ul class="list-neplan-overview" role="list">
+                    <li class="ov-item-neplan-overview ov-reveal-left" data-reveal-delay="0ms">
+                        <span class="ov-icon-neplan-overview" aria-hidden="true">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M9.2 16.2 4.9 11.9l-1.4 1.4 5.7 5.7L20.6 7.6l-1.4-1.4z" />
+                            </svg>
+                        </span>
+                        <div class="ov-body-neplan-overview">
+                            <h3>Integrated Multi-Network Simulation</h3>
+                            <p>As noted, ability to model electricity, gas, water, and heating/cooling networks
+                                together. Great for planning in smart cities, multi-energy systems, district thermal
+                                networks. </p>
+                        </div>
+                    </li>
+
+                    <li class="ov-item-neplan-overview ov-reveal-left" data-reveal-delay="120ms">
+                        <span class="ov-icon-neplan-overview" aria-hidden="true">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M9.2 16.2 4.9 11.9l-1.4 1.4 5.7 5.7L20.6 7.6l-1.4-1.4z" />
+                            </svg>
+                        </span>
+                        <div class="ov-body-neplan-overview">
+                            <h3>Modular & Customisable</h3>
+                            <p>You pick the modules you need (gas, water, heating/cooling) with modular add-ons such as
+                                time simulations, fire-water planning, etc.</p>
+                        </div>
+                    </li>
+
+                    <li class="ov-item-neplan-overview ov-reveal-left" data-reveal-delay="240ms">
+                        <span class="ov-icon-neplan-overview" aria-hidden="true">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M9.2 16.2 4.9 11.9l-1.4 1.4 5.7 5.7L20.6 7.6l-1.4-1.4z" />
+                            </svg>
+                        </span>
+                        <div class="ov-body-neplan-overview">
+                            <h3>Detailed Thermo-hydraulic Modelling</h3>
+                            <p>Full modelling of flows, pressures, temperature dependencies, pump & valve behaviour,
+                                pressure losses (bends, junctions etc.), compressible/incompressible gas, etc. </p>
+                        </div>
+                    </li>
+
+                    <li class="ov-item-neplan-overview ov-reveal-left" data-reveal-delay="360ms">
+                        <span class="ov-icon-neplan-overview" aria-hidden="true">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M9.2 16.2 4.9 11.9l-1.4 1.4 5.7 5.7L20.6 7.6l-1.4-1.4z" />
+                            </svg>
+                        </span>
+                        <div class="ov-body-neplan-overview">
+                            <h3>Integration & Data Interoperability:</h3>
+                            <p>GIS and map support; import/export; shared databases; web services / APIs; ability to
+                                update library data; client-server / multi-user / SQL database support. </p>
+                        </div>
+                    </li>
+
+                    <li class="ov-item-neplan-overview ov-reveal-left" data-reveal-delay="480ms">
+                        <span class="ov-icon-neplan-overview" aria-hidden="true">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M9.2 16.2 4.9 11.9l-1.4 1.4 5.7 5.7L20.6 7.6l-1.4-1.4z" />
+                            </svg>
+                        </span>
+                        <div class="ov-body-neplan-overview">
+                            <h3>Large-Scale Dynamic Network Simulation</h3>
+                            <p>Perform detailed, time-based simulations on very large networks to analyze their behavior
+                                over daily, weekly, or seasonal periods under varying demands and supply conditions.
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+
+                <!-- Right - Context card with CTA + Image -->
+                <aside class="card-neplan-overview ov-reveal-right" data-reveal-delay="160ms">
+                    <div class="card-chip-neplan-overview"> <span style="color: red;">NEPLAN</span> GAS WATER HEATING
+                    </div>
+                    <h3 class="card-title-neplan-overview">Gas · Water · Heating · Cooling</h3>
+                    <p class="card-text-neplan-overview">
+                        Model fluid flow, pressures, and temperatures, run steady-state &amp; dynamic simulations, and
+                        extend from planning to operations with the same data backbone.
+                    </p>
+                    <a class="card-link-neplan-overview" href="https://neplan.ch/neplanproduct/gas-water-heating-4/"
+                        target="_blank" rel="noopener">Learn more ↗</a>
+
+                    <!-- New: illustration image below the CTA -->
+                    <figure class="card-illustration-neplan-overview">
+                        <img src="{% static '/images/products/gas-water/neplan-box.avif' %}"
+                            alt="Control room and grid visualisation" loading="lazy">
+                    </figure>
+                </aside>
+            </div>
+        </div>
+    </section>
+    <section class="section-neplan-key-features" aria-labelledby="nkf-title">
+        <div class="container-neplan-key-features">
+            <header class="nkf-head ov-reveal-up" data-reveal-delay="0ms">
+                <p class="nkf-eyebrow">Key Modules &amp; Features</p>
+                <h2 id="nkf-title" class="nkf-title">Principal Calculation Modules in Gas / Water / Heating / Cooling
+                </h2>
+                <p class="nkf-lead">
+                    What each module does, where it’s used, and why it matters for network design, contingency analysis,
+                    and planning.
+                </p>
+            </header>
+
+            <ul class="nkf-grid" role="list">
+                <!-- 1 -->
+                <li class="nkf-card ov-reveal-left" data-reveal-delay="0ms">
+                    <div class="nkf-card-head">
+                        <span class="nkf-modules-icon" aria-hidden="true">
+                            <span class="nkf-modules-bullet"></span>
+                        </span>
+                        <h3 class="nkf-card-title">Gas Basic Module / Contingency Analysis</h3>
+                    </div>
+                    <p class="nkf-card-text">
+                        Model, design, and optimize gas networks. Handle routine & emergency conditions.
+                    </p>
+                </li>
+
+                <!-- 2 -->
+                <li class="nkf-card ov-reveal-left" data-reveal-delay="120ms">
+                    <div class="nkf-card-head">
+                         <span class="nkf-modules-icon" aria-hidden="true">
+            <span class="nkf-modules-bullet"></span>
+          </span>
+                        <h3 class="nkf-card-title">Water Basic Module / Contingency Analysis</h3>
+                    </div>
+                    <p class="nkf-card-text">
+                        Design and simulate water distribution networks: pressure zones, supply/demand, and emergency
+                        flows.
+                        </a>
+                    </p>
+                </li>
+
+                <!-- 3 -->
+                <li class="nkf-card ov-reveal-left" data-reveal-delay="240ms">
+                    <div class="nkf-card-head">
+                         <span class="nkf-modules-icon" aria-hidden="true">
+            <span class="nkf-modules-bullet"></span>
+          </span>
+                        <h3 class="nkf-card-title">Heating / Cooling Basic Module</h3>
+                    </div>
+                    <p class="nkf-card-text">
+                        Plan thermal networks; simulate heating/cooling flows; analyze thermal losses and return
+                        behavior under load.
+                        </a>
+                    </p>
+                </li>
+
+                <!-- 4 -->
+                <li class="nkf-card ov-reveal-left" data-reveal-delay="360ms">
+                    <div class="nkf-card-head">
+                         <span class="nkf-modules-icon" aria-hidden="true">
+            <span class="nkf-modules-bullet"></span>
+          </span>
+                        <h3 class="nkf-card-title">Time Simulation / Dynamic Demand Profiles</h3>
+                    </div>
+                    <p class="nkf-card-text">
+                        Use synthetic or measured profiles for loads/supplies; analyze daily & seasonal variations over
+                        time.
+
+                    </p>
+                </li>
+
+                <!-- 5 -->
+                <li class="nkf-card ov-reveal-left" data-reveal-delay="480ms">
+                    <div class="nkf-card-head">
+                         <span class="nkf-modules-icon" aria-hidden="true">
+            <span class="nkf-modules-bullet"></span>
+          </span>
+                        <h3 class="nkf-card-title">Geographical Data & GIS Integration</h3>
+                    </div>
+                    <p class="nkf-card-text">
+                        Import GIS/shapefiles; visualize networks over maps; use elevation data for map-based editing &
+                        display.
+                    </p>
+                </li>
+
+                <!-- 6 -->
+                <li class="nkf-card ov-reveal-left" data-reveal-delay="600ms">
+                    <div class="nkf-card-head">
+                         <span class="nkf-modules-icon" aria-hidden="true">
+            <span class="nkf-modules-bullet"></span>
+          </span>
+                        <h3 class="nkf-card-title">Technical Databases & Libraries</h3>
+                    </div>
+                    <p class="nkf-card-text">
+                        Libraries for pipes, pumps, valves, heat exchangers; customize elements and update network data.
+                    </p>
+                </li>
+
+                <!-- 7 -->
+                <li class="nkf-card ov-reveal-left" data-reveal-delay="720ms">
+                    <div class="nkf-card-head">
+                         <span class="nkf-modules-icon" aria-hidden="true">
+            <span class="nkf-modules-bullet"></span>
+          </span>
+                        <h3 class="nkf-card-title">Pump / Valve / Heat Exchanger Modelling</h3>
+                    </div>
+                    <p class="nkf-card-text">
+                        Models for flow, pressure drop, regulation, heat exchangers; simulate automatic control &
+                        regulation.
+                    </p>
+                </li>
+
+                <!-- 8 -->
+                <li class="nkf-card ov-reveal-left" data-reveal-delay="840ms">
+                    <div class="nkf-card-head">
+                         <span class="nkf-modules-icon" aria-hidden="true">
+            <span class="nkf-modules-bullet"></span>
+          </span>
+                        <h3 class="nkf-card-title">Fire Water Planning</h3>
+                    </div>
+                    <p class="nkf-card-text">
+                        Simulate emergency fire-fighting water supply at hydrants; check pressure levels under fire
+                        loads.
+                    </p>
+                </li>
+
+                <!-- 9 -->
+                <li class="nkf-card ov-reveal-left" data-reveal-delay="960ms">
+                    <div class="nkf-card-head">
+                         <span class="nkf-modules-icon" aria-hidden="true">
+            <span class="nkf-modules-bullet"></span>
+          </span>
+                        <h3 class="nkf-card-title">Length / Elevation Profiles</h3>
+                    </div>
+                    <p class="nkf-card-text">
+                        2D profiles for pipes: pressure vs elevation & flow; useful for visualization & diagnosing
+                        issues.
+                    </p>
+                </li>
+
+                <!-- 10 -->
+                <li class="nkf-card ov-reveal-left" data-reveal-delay="1080ms">
+                    <div class="nkf-card-head">
+                         <span class="nkf-modules-icon" aria-hidden="true">
+            <span class="nkf-modules-bullet"></span>
+          </span>
+                        <h3 class="nkf-card-title">Reliability / Contingency & Investment Analysis</h3>
+                    </div>
+                    <p class="nkf-card-text">
+                        Scenario planning: component failure impacts, pipeline criticality, and investment planning.
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ===========================
+     Why Choose NEPLAN Electricity?
+     Simple bullet list (no cards)
+     =========================== -->
+    <section class="neplan-li-ul-points" aria-labelledby="why-neplan-title">
+        <div class="neplan-li-ul-points__inner">
+            <h3 id="why-neplan-title" class="neplan-li-ul-points__title ov-reveal-left">
+                Why Choose NEPLAN Gas, Water & Heating / Cooling?
+            </h3>
+
+            <ul class="neplan-li-ul-points__list ov-reveal-left" role="list">
+                <li>Plan non-electrical infrastructure with the same level of depth &amp; rigor as electrical systems,
+                    using a single platform.</li>
+                <li>Understand and manage interdependencies between gas, water, and thermal networks and the electrical
+                    domain-for example, heating loads affecting electricity demand, or gas supply constraints affecting
+                    heating.</li>
+                <li>Improve reliability of supply under varying demand patterns, emergencies, or infrastructure changes.
+                </li>
+                <li>Optimize operational costs (pumping, heat losses etc.) and investment decisions via scenario and
+                    variant management.</li>
+                <li>Visual tools (GIS, profiles, maps) improve clarity and communication across stakeholders.</li>
+            </ul>
+        </div>
+    </section>
+
+
+    {% include "components/contact_block.html" %}
+
+    <script>
+        (function () {
+            const els = document.querySelectorAll('.ov-reveal-up, .ov-reveal-left, .ov-reveal-right');
+            if (!els.length) return;
+
+            // Optional per-item delay via data-reveal-delay="180ms"
+            els.forEach(el => {
+                const d = el.getAttribute('data-reveal-delay');
+                if (d) el.style.transitionDelay = /^\d+$/.test(d) ? `${d}ms` : d;
+            });
+
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(({ target, isIntersecting }) => {
+                    if (isIntersecting) target.classList.add('in-view');
+                    else target.classList.remove('in-view'); // replay when scrolling back
+                });
+            }, { threshold: 0.18 });
+
+            els.forEach(el => io.observe(el));
+        })();
+    </script>
+
+    <script>
+        (function () {
+            const root = document.getElementById('nesSlider');
+            if (!root) return;
+
+            const track = root.querySelector('.nes-track');
+            const dots = [...root.querySelectorAll('.nes-dot')];
+            const slides = root.querySelectorAll('.nes-slide');
+            const count = slides.length;
+
+            let index = 0;
+            let timer = null;
+
+            function go(i) {
+                index = (i + count) % count;
+                track.style.transform = `translateX(${-100 * index}%)`;
+                dots.forEach((d, di) => d.classList.toggle('is-active', di === index));
+            }
+
+            function play() {
+                stop();
+                timer = setInterval(() => go(index + 1), 3000);
+            }
+            function stop() {
+                if (timer) { clearInterval(timer); timer = null; }
+            }
+
+            // dot click
+            dots.forEach(d => d.addEventListener('click', e => {
+                const i = parseInt(d.dataset.slide, 10) || 0;
+                go(i);
+                play(); // continue autoplay after jump
+            }));
+
+            // pause on hover/focus inside the viewport
+            ['mouseenter', 'focusin'].forEach(ev => root.addEventListener(ev, stop));
+            ['mouseleave', 'focusout'].forEach(ev => root.addEventListener(ev, play));
+
+            // kick off
+            go(0);
+            play();
+        })();
+    </script>
+    {% include 'footer.html' %}
+    <!-- Link to Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/main.js'%}"></script>
+
+
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKQV8LKX" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+</body>
+
+</html>

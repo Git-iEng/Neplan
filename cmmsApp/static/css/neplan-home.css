@@ -1,0 +1,1470 @@
+/* ============== NEPLAN Home — Hero (1400px card) ============== */
+:root {
+  --primary: #192231;
+  --primary-2: #7cf7e2;
+  --primary-hover: #0ea5e9;
+  --primary-active: #0284c7;
+}
+
+/* common bullet instead of SVG per-card icon */
+.nkf-modules-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  background: rgba(15, 118, 110, 0.12);
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  box-shadow: none;
+}
+
+.nkf-modules-bullet {
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--nkf-modules-primary), var(--nkf-modules-primary-2));
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.25);
+}
+body {
+  /* 3.5rem header + 1rem spacing */
+  /* background-color: #f5f5f5; */
+  background: #f3f5f8;
+  margin: 0;
+  padding: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  padding-top: 5.5rem;
+}
+
+.section-neplan-home {
+  padding: clamp(16px, 3.5vw, 28px) 16px;
+}
+
+/* CARD is capped at 1400px and centered */
+.hero-card-neplan-home {
+  position: relative;
+  max-width: 1400px;
+  /* ✅ per your request */
+  margin: 0 auto;
+  min-height: clamp(360px, 52vw, 520px);
+  border-radius: clamp(24px, 3vw, 44px);
+  overflow: hidden;
+  box-shadow: 0 28px 70px rgba(2, 8, 23, .22);
+  background: #000;
+  background-image: var(--hero-bg);
+  /* set via inline style w/ static */
+  background-size: cover;
+  background-position: 72% 50%;
+  /* show more of the right side */
+}
+
+/* Left-to-right readability gradient (lighter on the right) */
+.hero-card-neplan-home::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(900px 420px at 22% 14%, rgba(91, 157, 255, .14), transparent 60%),
+    radial-gradient(760px 360px at 86% 18%, rgba(124, 247, 226, .12), transparent 65%),
+    linear-gradient(90deg,
+      rgba(0, 0, 0, .88) 0%,
+      rgba(0, 0, 0, .64) 36%,
+      rgba(0, 0, 0, .28) 58%,
+      rgba(0, 0, 0, .08) 70%,
+      rgba(0, 0, 0, 0) 80%);
+  pointer-events: none;
+}
+
+/* Subtle bottom vignette */
+.hero-card-neplan-home::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, .45), rgba(0, 0, 0, 0));
+  pointer-events: none;
+}
+
+/* Inner layout (content + optional device) */
+.inner-neplan-home {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1.05fr .65fr;
+  gap: clamp(16px, 3.5vw, 48px);
+  align-items: center;
+  padding: clamp(18px, 4vw, 48px);
+}
+
+.content-neplan-home {
+  color: #fff;
+}
+
+.title-neplan-home {
+  margin: 0 0 clamp(10px, 2.5vw, 36px);
+  font-weight: 800;
+  line-height: 1.03;
+  letter-spacing: .2px;
+  font-size: clamp(2rem, 5.8vw, 6rem);
+}
+
+
+.title-neplan-home2 {
+  margin: 0 0 clamp(10px, 2.5vw, 36px);
+  font-weight: 800;
+  line-height: 1.03;
+  letter-spacing: .2px;
+  font-size: clamp(2rem, 2.8vw, 6rem);
+}
+
+.subtitle-neplan-home {
+  margin: 0 0 clamp(36px, 4vw, 56px);
+  max-width: 50ch;
+  font-size: clamp(.96rem, 1.25vw, 1.08rem);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, .92);
+}
+
+/* Unified pill buttons */
+.cta-row-neplan-home {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn-neplan-home {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: .9rem 1.25rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  color: #fff;
+  border: 2px solid transparent;
+  background: linear-gradient(80deg, var(--primary), var(--primary-2));
+  box-shadow: 0 10px 24px rgba(2, 8, 23, .35);
+  transition: transform .25s, box-shadow .25s, background .25s, border-color .25s;
+}
+
+.btn-neplan-home:hover {
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px rgba(14, 165, 233, .45);
+}
+
+.btn-neplan-home:active {
+  background: var(--primary-active);
+  border-color: var(--primary-active);
+  transform: none;
+}
+
+.btn-neplan-home .arrow {
+  font-size: 1.05em;
+  line-height: 1;
+}
+
+/* Optional device mock (right side) */
+.device-neplan-home {
+  align-self: end;
+  justify-self: center;
+  width: clamp(280px, 34vw, 500px);
+  transform: rotate(-18deg);
+  /* padding-right: -50px; */
+  filter: drop-shadow(0 14px 24px rgba(0, 0, 0, .45));
+}
+
+.device-neplan-home img {
+  /* width: 100%; */
+  width: 500px;
+height: 300px;
+  height: auto;
+  display: block;
+}
+
+/* ===== Responsive: stack on small screens & keep card shape ===== */
+@media (max-width: 900px) {
+  .inner-neplan-home {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .device-neplan-home {
+    display: none;
+  }
+
+  .hero-card-neplan-home {
+    background-position: 60% 50%;
+  }
+}
+
+
+/* ================================
+   4 Feature Cards — neplan-cards
+   ================================ */
+:root {
+  --accent: #7c3aed;
+  /* purple accent */
+  --accent-soft: #efeafd;
+  --text: #0e1b2b;
+  --muted: #5b6472;
+  --ring: rgba(124, 58, 237, .25);
+  --shadow: rgba(2, 8, 23, .12);
+}
+
+.section-neplan-cards {
+  padding: clamp(24px, 5vw, 56px) 16px;
+  background: #fff;
+}
+
+.container-neplan-cards {
+  max-width: 1200px;
+  /* adjust if you want 1400 */
+  margin: 0 auto;
+}
+
+.grid-neplan-cards {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(18px, 2.5vw, 28px);
+}
+
+/* Responsive: 2×2 on tablets, 1 column on phones */
+@media (max-width: 1024px) {
+  .grid-neplan-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-neplan-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Card */
+.card-neplan-cards {
+  background: #fff;
+  border: 1px solid rgba(14, 27, 43, .08);
+  border-radius: 20px;
+  padding: clamp(16px, 2.4vw, 22px);
+  box-shadow: 0 10px 26px var(--shadow);
+  transition: transform .35s cubic-bezier(.2, .8, .2, 1), box-shadow .35s ease, border-color .35s ease, opacity .6s ease;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+
+  /* reveal animation (initial state) */
+  opacity: 0;
+  transform: translateX(-28px);
+}
+
+/* Top accent line */
+.card-neplan-cards::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -1px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), #7cf7e2);
+  opacity: .9;
+}
+
+/* Hover */
+.card-neplan-cards:hover {
+  transform: translateY(-6px);
+  border-color: var(--ring);
+  box-shadow: 0 18px 40px rgba(2, 8, 23, .18);
+}
+
+/* Icon */
+.iconwrap-neplan-cards {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border: 1px solid rgba(124, 58, 237, .18);
+  margin-bottom: 10px;
+}
+
+/* Titles & text */
+.title-neplan-cards {
+  font-size: clamp(1.25rem, 2.2vw, 2rem);
+  font-weight: 800;
+  color: var(--text);
+  margin: 6px 0 8px;
+}
+
+.desc-neplan-cards {
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0 0 12px;
+  font-size: .98rem;
+}
+
+/* Bullet list with check marks */
+.list-neplan-cards {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.list-neplan-cards li {
+  color: var(--text);
+  font-size: .98rem;
+  position: relative;
+  padding-left: 28px;
+}
+
+.list-neplan-cards li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: .8rem;
+  line-height: 1;
+  background: #0f172a;
+  color: #fff;
+}
+
+/* Staggered reveal when in view */
+.card-neplan-cards.in-view-neplan-cards {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.card-neplan-cards:nth-child(1) {
+  transition-delay: .05s;
+}
+
+.card-neplan-cards:nth-child(2) {
+  transition-delay: .10s;
+}
+
+.card-neplan-cards:nth-child(3) {
+  transition-delay: .15s;
+}
+
+.card-neplan-cards:nth-child(4) {
+  transition-delay: .20s;
+}
+
+/* ===== Force 2 cards per row (desktop/tablet), 1 per row on mobile ===== */
+.section-neplan-cards .grid-neplan-cards {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  /* 2 columns by default */
+  align-items: stretch;
+  gap: clamp(18px, 2.5vw, 28px);
+}
+
+/* Mobile: stack */
+@media (max-width: 700px) {
+  .section-neplan-cards .grid-neplan-cards {
+    grid-template-columns: 1fr;
+    /* 1 column on small screens */
+  }
+}
+
+
+/* ===== Headline block (scoped) ===== */
+:root {
+  --primary: #5b9dff;
+  --primary-2: #7cf7e2;
+  --text: #0e1b2b;
+}
+
+.section-key-areas {
+  background: #fff;
+  padding: clamp(28px, 1vw, 72px) 16px 0;
+  color: var(--text);
+}
+
+.container-key-areas {
+  max-width: 1100px;
+  /* comfy reading width */
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  animation: keyFadeUp .6s ease both;
+}
+
+/* small eyebrow/overline like in the screenshot */
+.eyebrow-key-areas {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  margin: 0 0 .5rem;
+  font-size: clamp(.82rem, .95vw, .95rem);
+  font-weight: 800;
+  letter-spacing: .3px;
+  color: #0e1b2b;
+  opacity: .8;
+}
+
+.eyebrow-key-areas::before {
+  content: "";
+  width: 28px;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--primary-2));
+}
+
+/* big headline */
+.heading-key-areas {
+  margin: 0;
+  line-height: 1.15;
+  letter-spacing: .2px;
+  font-weight: 800;
+  font-size: clamp(1.6rem, 6vw, 3rem);
+  color: #0e1b2b;
+}
+
+/* gradient brand accent inside the heading */
+.brand-key-areas {
+  background: linear-gradient(90deg, red, rgb(136, 1, 1));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* subtle entrance animation */
+@keyframes keyFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* why it matters */
+/* ===============================
+   NAPLAN Description — styles
+   =============================== */
+:root {
+  --primary: #5b9dff;
+  /* accent blue  */
+  --primary-2: #7cf7e2;
+  /* teal accent  */
+  --text: #0e1b2b;
+  /* headings/body */
+  --rule: rgba(14, 27, 43, .10);
+  --shadow: rgba(2, 8, 23, .10);
+}
+
+.section-neplan-description {
+  background: #fff;
+  color: var(--text);
+  padding: clamp(28px, 1vw, 72px) 16px;
+}
+
+.container-neplan-description {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Header */
+.head-neplan-description h3 {
+  margin: 0 0 .45rem;
+  font-weight: 900;
+  letter-spacing: .2px;
+  font-size: clamp(1.3rem, 2.2vw, 1.8rem);
+  color: #0e1b2b;
+  align-items: center;
+  text-align: center;
+}
+
+.head-neplan-description p {
+  margin: 0 0 1.2rem;
+  text-align: center;
+  max-width: 100ch;
+  opacity: .9;
+  line-height: 1.65;
+  font-size: clamp(.98rem, 1.2vw, 1.05rem);
+}
+
+/* Center the "Core Benefits" subhead */
+.subhead-neplan-description {
+  display: flex;
+  /* block-level so it can center */
+  justify-content: center;
+  /* ⬅️ centers the whole group horizontally */
+  align-items: center;
+  /* gap: .5rem; */
+  width: 100%;
+  margin: 0.6rem auto .6rem;
+  /* add bottom space */
+  font-size: clamp(2rem, 1.4vw, 1.15rem);
+  font-weight: 900;
+  text-align: center;
+}
+
+.subhead-neplan-description::before {
+  content: "";
+  width: 28px;
+  height: 3px;
+  border-radius: 2px;
+  /* background: linear-gradient(90deg, var(--primary), var(--primary-2)); */
+}
+
+/* (Optional) add a matching line on the right for symmetry */
+/*
+.subhead-neplan-description::after{
+  content: "";
+  width: 28px;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--primary-2));
+}
+*/
+
+
+/* Table wrapper with rounded edge + top gradient strip */
+.tablewrap-neplan-description {
+  position: relative;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px var(--shadow);
+  border: 1px solid var(--rule);
+  overflow: hidden;
+}
+
+.tablewrap-neplan-description::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--primary-2));
+  z-index: 1;
+}
+
+/* Table */
+.table-neplan-description {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #fff;
+  color: #0e1b2b;
+}
+
+/* Header row */
+.table-neplan-description thead th {
+  text-align: left;
+  padding: .9rem 1rem;
+  background: linear-gradient(180deg, #f7f9fc, #f1f5fb);
+  border-bottom: 1px solid var(--rule);
+  font-weight: 800;
+  letter-spacing: .2px;
+  position: relative;
+  z-index: 0;
+}
+
+/* Body rows */
+.table-neplan-description tbody th,
+.table-neplan-description tbody td {
+  padding: 1rem;
+  vertical-align: top;
+  border-bottom: 1px solid var(--rule);
+}
+
+.table-neplan-description tbody th[scope="row"] {
+  width: 32%;
+  font-weight: 900;
+  align-items: start;
+  justify-items: left;
+  text-align: left;
+  
+}
+
+/* Row hover */
+.table-neplan-description tbody tr:hover {
+  background: linear-gradient(0deg, rgba(91, 157, 255, .06), rgba(124, 247, 226, .06));
+}
+
+/* Scroll-in animation: initial state */
+.row-neplan-description {
+  opacity: 0;
+  transform: translateX(-26px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+
+.row-neplan-description.in-view-neplan-description {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.row-neplan-description:nth-child(2) {
+  transition-delay: .05s;
+}
+
+.row-neplan-description:nth-child(3) {
+  transition-delay: .10s;
+}
+
+.row-neplan-description:nth-child(4) {
+  transition-delay: .15s;
+}
+
+.row-neplan-description:nth-child(5) {
+  transition-delay: .20s;
+}
+
+/* ===== Mobile-friendly stacked layout ===== */
+@media (max-width: 720px) {
+  .table-neplan-description thead {
+    /* Hide the fixed header on mobile and use data labels */
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+    padding: 0;
+    margin: -1px;
+  }
+
+  .table-neplan-description tbody tr {
+    display: block;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .table-neplan-description tbody th[scope="row"],
+  .table-neplan-description tbody td {
+    display: block;
+    width: 100%;
+    border-bottom: none;
+    padding: .85rem 1rem;
+  }
+
+  .table-neplan-description tbody th[scope="row"] {
+    font-size: 1.05rem;
+    background: linear-gradient(90deg, rgba(91, 157, 255, .08), rgba(124, 247, 226, .08));
+    border-bottom: 1px dashed var(--rule);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+
+  .table-neplan-description tbody td {
+    position: relative;
+    padding-top: .6rem;
+  }
+
+  .table-neplan-description tbody td::before {
+    content: attr(data-label);
+    display: block;
+    font-weight: 800;
+    opacity: .75;
+    margin-bottom: .25rem;
+  }
+}
+
+/* ===============================
+   Key Highlights + CTA — styles
+   =============================== */
+:root {
+  --primary: #0f766e;
+  /* teal-700 */
+  --primary-2: #155e75;
+  /* cyan-800 */
+  --primary-hover: #0e7490;
+  --primary-active: #134e4a;
+  --text: #0e1b2b;
+  --rule: rgba(14, 27, 43, .10);
+
+  --muted: #5b6472;
+
+  --shadow: rgba(2, 8, 23, .08);
+  --panel: #ffffff;
+  --panel-soft: #f6f8fb;
+}
+
+
+/* Section wrapper */
+.section-neplan-cta-buttons {
+  background: #fff;
+  color: var(--text);
+  padding: clamp(28px, 6vw, 72px) 16px;
+}
+
+/* Content container */
+.container-neplan-cta-buttons {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  /* text | buttons side-by-side */
+  gap: clamp(18px, 4vw, 40px);
+  align-items: center;
+}
+
+/* Eyebrow */
+.eyebrow-neplan-cta-buttons {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  margin: 0 0 .5rem;
+  font-size: .9rem;
+  font-weight: 800;
+  opacity: .85;
+}
+
+.eyebrow-neplan-cta-buttons::before {
+  content: "";
+  width: 28px;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--primary-2));
+}
+
+/* Title */
+.title-neplan-cta-buttons {
+  margin: 0 0 .5rem;
+  font-weight: 800;
+  letter-spacing: .2px;
+  line-height: 1.15;
+  font-size: clamp(1.4rem, 4.6vw, 2.2rem);
+}
+
+/* Highlights list */
+.highlights-neplan-cta-buttons {
+  list-style: none;
+  padding: 0;
+  margin: .5rem 0 0;
+  display: grid;
+  gap: .65rem;
+}
+
+.highlights-neplan-cta-buttons li {
+  position: relative;
+  padding-left: 30px;
+  line-height: 1.6;
+}
+
+.highlights-neplan-cta-buttons li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: .05rem;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: .8rem;
+  line-height: 1;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  box-shadow: 0 0 0 3px #fff inset, 0 2px 8px rgba(16, 24, 39, .12);
+}
+
+/* CTA buttons: unified style for all three */
+.actions-neplan-cta-buttons {
+  display: grid;
+  gap: clamp(10px, 1.8vw, 14px);
+  align-content: start;
+}
+
+.btn-neplan-cta-buttons {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .9rem 1.25rem;
+  border-radius: 999px;
+  /* pill */
+  text-decoration: none;
+  font-weight: 700;
+  color: #fff;
+  border: 2px solid transparent;
+  background: linear-gradient(90deg, var(--primary), var(--primary-2));
+  box-shadow: 0 10px 24px rgba(2, 8, 23, .25);
+  transition: transform .25s ease, box-shadow .25s ease,
+    background .25s ease, border-color .25s ease;
+}
+
+.btn-neplan-cta-buttons:hover {
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px rgba(14, 165, 233, .35);
+}
+
+.btn-neplan-cta-buttons:active {
+  background: var(--primary-active);
+  border-color: var(--primary-active);
+  transform: translateY(0);
+}
+
+.btn-neplan-cta-buttons:focus-visible {
+  outline: 2px solid transparent;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, .6), 0 0 0 6px rgba(91, 157, 255, .25);
+}
+
+/* Subtle entrance animation */
+@keyframes ctaFadeUp-neplan {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.intro-neplan-cta-buttons,
+.actions-neplan-cta-buttons {
+  animation: ctaFadeUp-neplan .6s ease both;
+}
+
+.actions-neplan-cta-buttons {
+  animation-delay: .08s;
+}
+
+/* ===== Responsive layout ===== */
+@media (max-width: 860px) {
+  .container-neplan-cta-buttons {
+    grid-template-columns: 1fr;
+    /* stack */
+    text-align: center;
+  }
+
+  .highlights-neplan-cta-buttons li {
+    padding-left: 26px;
+    text-align: left;
+  }
+
+  .actions-neplan-cta-buttons {
+    justify-items: center;
+  }
+
+  .btn-neplan-cta-buttons {
+    width: min(520px, 100%);
+  }
+}
+
+/* :root {
+    --primary: #3864b1;
+    --primary-2: #acfaed;
+    --primary-hover: #0ea5e9;
+    --primary-active: #0284c7;
+} */
+
+/* ===============================
+   Testimonials — neplan-testimonials
+   =============================== */
+.section-neplan-testimonials {
+  --accent: #0f3d2e;
+  /* dark green for controls */
+  --text: #0e1b2b;
+  --muted: #5b6472;
+  --card: #ffffff;
+  --stage: #f4f6f8;
+  --ring: rgba(14, 27, 43, .10);
+
+  padding: clamp(28px, 6vw, 72px) 16px;
+  color: var(--text);
+}
+
+.container-neplan-testimonials {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Tag + title */
+.tag-neplan-testimonials {
+  display: inline-block;
+  font-size: .78rem;
+  font-weight: 800;
+  padding: .35rem .6rem;
+  border-radius: 999px;
+  background: #0a2e23;
+  color: #fff;
+  margin-bottom: .5rem;
+}
+
+.title-neplan-testimonials {
+  margin: 0 0 1rem;
+  font-size: clamp(1.6rem, 4.6vw, 2.3rem);
+  line-height: 1.15;
+  font-weight: 800;
+}
+
+/* Stage (rounded strip like screenshot) */
+.stage-neplan-testimonials {
+  background: white;
+  /* border: 1px solid var(--ring); */
+  border-radius: 18px;
+  padding: clamp(12px, 2.5vw, 18px);
+  /* box-shadow: 0 15px 40px rgba(2, 8, 23, .08) inset; */
+}
+
+/* Horizontal rail */
+.rail-neplan-testimonials {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(680px, 1fr);
+  /* card width */
+  gap: clamp(14px, 2vw, 22px);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: clamp(10px, 2vw, 14px);
+  border-radius: 14px;
+}
+
+/* hide default scrollbar (keeps accessibility) */
+.rail-neplan-testimonials::-webkit-scrollbar {
+  height: 8px;
+}
+
+.rail-neplan-testimonials::-webkit-scrollbar-thumb {
+  background: rgba(2, 8, 23, .12);
+  border-radius: 999px;
+}
+
+/* Card look */
+.card-neplan-testimonials {
+  scroll-snap-align: center;
+  background: var(--card);
+  border: 1px solid var(--ring);
+  border-radius: 12px;
+  padding: 14px;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 14px;
+  align-items: center;
+  box-shadow: 0 10px 24px rgba(2, 8, 23, .10);
+}
+
+.photo-neplan-testimonials {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.content-neplan-testimonials {
+  text-align: left;
+}
+
+.brand-neplan-testimonials {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-weight: 800;
+  margin-bottom: .35rem;
+}
+
+
+
+.card-neplan-testimonials blockquote {
+  margin: .25rem 0 .6rem;
+  color: var(--text);
+  font-size: .98rem;
+  line-height: 1.55;
+}
+
+.who-neplan-testimonials {
+  margin: 0;
+  font-size: .85rem;
+  color: var(--muted);
+}
+
+/* Controls & progress bar */
+.controls-neplan-testimonials {
+  display: grid;
+  grid-template-columns: 44px 1fr 44px;
+  align-items: center;
+  gap: 14px;
+  padding: clamp(10px, 2vw, 16px) clamp(4px, 1vw, 8px);
+}
+
+.nav-neplan-testimonials {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-size: 1.4rem;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: transform .2s ease, filter .2s ease;
+}
+
+.nav-neplan-testimonials:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+.progress-neplan-testimonials {
+  height: 6px;
+  border-radius: 999px;
+  background: #e5e8ee;
+  position: relative;
+  overflow: hidden;
+}
+
+.bar-neplan-testimonials {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: left center;
+  transform: scaleX(0);
+  background: linear-gradient(90deg, #1e3a8a, #22c55e);
+}
+
+/* Responsive */
+@media (max-width: 860px) {
+  .rail-neplan-testimonials {
+    grid-auto-columns: minmax(85vw, 1fr);
+  }
+
+  .card-neplan-testimonials {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .content-neplan-testimonials {
+    text-align: center;
+  }
+
+  .photo-neplan-testimonials {
+    height: 200px;
+  }
+}
+
+/* Hide the browser scrollbar but keep programmatic scrolling */
+.rail-neplan-testimonials {
+  overflow-x: auto;
+  /* keep for smooth programmatic scroll */
+  -ms-overflow-style: none;
+  /* IE/Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.rail-neplan-testimonials::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* WebKit */
+
+/* Hide the progress track entirely */
+.progress-neplan-testimonials {
+  display: none;
+}
+
+/* (optional) tighten stage padding a bit since the bar is gone */
+.controls-neplan-testimonials {
+  grid-template-columns: 48px 48px;
+  /* just arrows */
+  justify-content: space-between;
+  gap: 0;
+  padding-top: clamp(8px, 1.4vw, 12px);
+}
+
+/* Make arrows a touch larger & snappier */
+.nav-neplan-testimonials {
+  width: 48px;
+  height: 48px;
+  font-size: 1.35rem;
+  background: #0a3a2f;
+  border: none;
+  color: #fff;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: transform .18s ease, filter .18s ease;
+}
+
+.nav-neplan-testimonials:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+/* --- SHOW the bottom progress bar again --- */
+.progress-neplan-testimonials {
+  display: block;
+}
+
+/* Controls: arrows + progress bar between them */
+.controls-neplan-testimonials {
+  display: grid;
+  grid-template-columns: 48px 1fr 48px;
+  /* ◀︎  [progress]  ▶︎ */
+  align-items: center;
+  gap: 14px;
+  padding-top: clamp(8px, 1.6vw, 14px);
+}
+
+/* Progress track + fill */
+.progress-neplan-testimonials {
+  height: 8px;
+  border-radius: 999px;
+  background: #e6ebf2;
+  /* light rail */
+  overflow: hidden;
+  box-shadow: inset 0 1px 2px rgba(2, 8, 23, .06);
+}
+
+.bar-neplan-testimonials {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: left center;
+  transform: scaleX(0);
+  /* 0 → 1 */
+  background: linear-gradient(90deg, #1e3a8a, #22c55e);
+  transition: transform .25s ease;
+  /* smooth fill */
+}
+
+/* Keep the native scrollbar hidden */
+.rail-neplan-testimonials {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.rail-neplan-testimonials::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* REVEAL ON SCROLL */
+
+
+/* ===== Reveal on scroll ===== */
+.reveal-mobility {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .5s ease, transform .5s ease;
+  will-change: transform, opacity;
+}
+
+.reveal-mobility[data-reveal="left"] {
+  transform: translateX(32px);
+}
+
+.reveal-mobility[data-reveal="right"] {
+  transform: translateX(-32px);
+}
+
+.reveal-mobility.is-visible-mobility {
+  opacity: 1;
+  transform: none;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+
+  .better-row-mobility,
+  .better-row-alt-mobility {
+    grid-template-columns: 1fr;
+    /* stack */
+  }
+
+  .better-media-mobility img {
+    max-height: 420px;
+  }
+}
+
+@media (max-width: 560px) {
+  .better-pill-mobility {
+    font-size: 13px;
+    padding: 9px 12px;
+  }
+}
+
+/* :root {
+  --primary: #1e3a8a;
+  --primary-2: #1d4ed8;
+  --primary-hover: #2563eb;
+  --primary-active: #1e40af;
+  --text: #0f172a;
+  --rule: rgba(15, 23, 42, .10);
+  --muted: #64748b;
+  --shadow: rgba(15, 23, 42, .08);
+  --panel: #ffffff;
+  --panel-soft: #f8fafc;
+} */
+
+:root {
+  --primary: #0f766e;
+  /* teal-700 */
+  --primary-2: #155e75;
+  /* cyan-800 */
+  --primary-hover: #0e7490;
+  --primary-active: #134e4a;
+  --text: #0e1b2b;
+  --rule: rgba(14, 27, 43, .10);
+  --muted: #5b6472;
+  --shadow: rgba(2, 8, 23, .08);
+  --panel: #ffffff;
+  --panel-soft: #f6f8fb;
+}
+
+.section-neplan-last-part {
+  background: #fff;
+  color: var(--text);
+  padding: clamp(28px, 3vw, 72px) 16px;
+}
+
+.container-neplan-last-part {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Panel */
+.panel-neplan-last-part {
+  background: var(--panel);
+  border: 0px solid var(--rule);
+  border-radius: 16px;
+  box-shadow: 0 20px 40px var(--shadow);
+  padding: clamp(16px, 3vw, 22px);
+  position: relative;
+  overflow: hidden;
+}
+
+.panel-neplan-last-part::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--primary-2));
+}
+
+.title-neplan-last-part {
+  margin: 0 0 .75rem;
+  font-weight: 900;
+  font-size: clamp(1.15rem, 2vw, 1.35rem);
+}
+
+/* Steps timeline */
+.steps-neplan-last-part {
+  list-style: none;
+  margin: 0;
+  padding: 6px 0 0;
+  position: relative;
+}
+
+.steps-neplan-last-part::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 12px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(15, 118, 110, .22), rgba(21, 94, 117, .22));
+}
+
+.step-neplan-last-part {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  align-items: start;
+  gap: 12px;
+  padding: 8px 0;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: rise-last-part .6s ease forwards;
+}
+
+.step-neplan-last-part:nth-child(1) {
+  animation-delay: .04s;
+}
+
+.step-neplan-last-part:nth-child(2) {
+  animation-delay: .10s;
+}
+
+.step-neplan-last-part:nth-child(3) {
+  animation-delay: .16s;
+}
+
+.step-neplan-last-part:nth-child(4) {
+  animation-delay: .22s;
+}
+
+@keyframes rise-last-part {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.num-neplan-last-part {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  box-shadow: 0 6px 14px rgba(2, 8, 23, .18);
+}
+
+.body-neplan-last-part {
+  line-height: 1.65;
+  color: var(--text);
+}
+
+.label-neplan-last-part {
+  font-weight: 900;
+}
+
+/* Buttons area */
+.actions-neplan-last-part {
+  align-items: center;
+  text-align: center;
+  justify-items: center;
+  margin-top: clamp(16px, 3.5vw, 26px);
+  padding-top: clamp(10px, 2vw, 14px);
+  border-top: 1px dashed var(--rule);
+  display: grid;
+  gap: clamp(12px, 2vw, 16px);
+}
+
+.group-neplan-last-part {
+  display: grid;
+  gap: 8px;
+}
+
+.group-label-neplan-last-part {
+  font-size: .92rem;
+  font-weight: 800;
+  color: var(--muted);
+}
+
+/* Button rows */
+.btn-row-neplan-last-part {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Primary pill */
+.btn-neplan-last-part {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .85rem 1.15rem;
+  border-radius: 999px;
+  font-weight: 800;
+  color: #fff;
+  text-decoration: none;
+  border: 2px solid transparent;
+  background: linear-gradient(90deg, var(--primary), var(--primary-2));
+  box-shadow: 0 10px 24px rgba(2, 8, 23, .18);
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease, border-color .25s ease;
+}
+
+.btn-neplan-last-part:hover {
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+.btn-neplan-last-part:active {
+  background: var(--primary-active);
+  border-color: var(--primary-active);
+  transform: none;
+}
+
+/* Secondary (ghost) pills */
+.btn-ghost-neplan-last-part {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .78rem 1.05rem;
+  border-radius: 999px;
+  font-weight: 800;
+  color: #0f3f46;
+  text-decoration: none;
+  border: 2px solid rgba(15, 118, 110, .35);
+  background: linear-gradient(180deg, rgba(255, 255, 255, .85), rgba(246, 248, 251, .85));
+  box-shadow: 0 4px 14px rgba(2, 8, 23, .10);
+  transition: transform .25s ease, border-color .25s ease, filter .25s ease;
+}
+
+.btn-ghost-neplan-last-part:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary);
+  filter: brightness(1.02);
+}
+
+/* Mobile: full-width buttons look great */
+@media (max-width: 640px) {
+  .btn-row-neplan-last-part a {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+}
+/* Make card content full width */
+.fullwidth-content {
+  width: 100%;
+  padding: 1.5rem 1.75rem;
+}
+
+/* Ensure card layout stays clean without images */
+.card-neplan-testimonials {
+  display: flex;
+  align-items: stretch;
+}
+
+/* Button styling */
+.btn-neplan-pdf {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.55rem 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0f766e;
+  border: 1.5px solid #0f766e;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn-neplan-pdf:hover {
+  background-color: #0f766e;
+  color: #ffffff;
+}
+
+/* Optional: spacing consistency */
+.who-neplan-testimonials {
+  margin-bottom: 0.5rem;
+}

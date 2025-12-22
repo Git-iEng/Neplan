@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEPLAN-Research</title>
+    <!--=============== CSS ===============-->
+    <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-TKQV8LKX');</script>
+  <!-- End Google Tag Manager -->
+    <link rel="stylesheet" href="{% static 'css/consult-block.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/neplan-electricity.css' %}">
+
+
+    <link rel="stylesheet" href="{% static 'css/neplan-gas-water-heat.css' %}">
+    <link rel="icon" href="{% static 'images/logo1.png' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+
+
+</head>
+
+<body>
+    {% include 'header.html' %}
+    <section class="neplan-electricity-slide" aria-label="NEPLAN subproduct slideshow">
+        <div class="nes-viewport" id="nesSlider">
+            <div class="nes-track">
+                <!-- Slide 1 -->
+                <article class="nes-slide"
+                    style="background-image: url('../static/images/products/research/neplan1.avif');">
+                    <div class="nes-overlay"></div>
+                    <div class="nes-content">
+                        <p class="eyebrow-neplan-what-we-bring" style="margin-left: -25px;"><span
+                                style="color: red; ">NEPLAN </span>RESEARCH</p>
+                        <h1 class="nes-title">Education Ready</h1>
+                        <p class="nes-sub">
+                            Intuitive GUI, pre-defined examples, and free student version in the cloud for universities
+                            and engineering schools.
+                        </p>
+                        <a href="/contact/" class="nes-cta">Contact us <span>↗</span></a>
+                    </div>
+                </article>
+
+                <!-- Slide 2 -->
+                <article class="nes-slide"
+                    style="background-image: url('../static/images/products/research/neplan2.avif');">
+                    <div class="nes-overlay"></div>
+                    <div class="nes-content">
+                        <p class="eyebrow-neplan-what-we-bring" style="margin-left: -25px;"><span
+                                style="color: red; ">NEPLAN </span>RESEARCH</p>
+                        <h1 class="nes-title">Cloud Versions</h1>
+                        <p class="nes-sub">
+                            Free student version and research subscription version with up to 5000 nodes-all without
+                            local installation needs.
+                        </p>
+                        <a href="/contact/" class="nes-cta">Contact us <span>↗</span></a>
+                    </div>
+                </article>
+
+                <!-- Slide 3 (no image → dark gradient fallback) -->
+                <article class="nes-slide"
+                    style="background-image: url('../static/images/products/research/neplan3.avif');">
+                    <div class="nes-overlay"></div>
+                    <div class="nes-content">
+                        <p class="eyebrow-neplan-what-we-bring" style="margin-left: -25px;"><span
+                                style="color: red; ">NEPLAN </span>RESEARCH</p>
+                        <h1 class="nes-title">University Package</h1>
+                        <p class="nes-sub">
+                            Includes education licenses, research licenses, and multi-user environment with subscription
+                            model for academic use only.
+                        </p>
+                        <a href="/contact/" class="nes-cta">Contact us <span>↗</span></a>
+                    </div>
+                </article>
+
+
+            </div>
+
+            <!-- Vertical dots (pager) -->
+            <nav class="nes-dots" aria-label="Slide navigation">
+                <button class="nes-dot is-active" aria-label="Go to slide 1" data-slide="0"></button>
+                <button class="nes-dot" aria-label="Go to slide 2" data-slide="1"></button>
+                <button class="nes-dot" aria-label="Go to slide 3" data-slide="2"></button>
+                <!-- <button class="nes-dot" aria-label="Go to slide 4" data-slide="3"></button> -->
+            </nav>
+        </div>
+    </section>
+    <section class="section-neplan-overview" aria-labelledby="neplan-research-title">
+        <div class="container-neplan-overview">
+
+            <header class="header-neplan-overview ov-reveal-up">
+                <p class="eyebrow-neplan-overview">Overview</p>
+                <h2 id="neplan-research-title" class="title-neplan-overview">
+                    <span style="color: rgb(190, 2, 2);"> NEPLAN</span> Research - Education & Advanced Simulation
+                    Platform
+                </h2>
+                <p class="lead-neplan-overview">
+                    NEPLAN Research provides a powerful environment for both education and research in power systems.
+                    Universities, engineering schools, and research institutions benefit from its intuitive graphical
+                    interface,
+                    comprehensive library of network elements, and ready-to-use examples based on internationally
+                    recognized
+                    standards and textbooks.
+                </p>
+                <p class="lead-neplan-overview">
+                    With capabilities ranging from load flow and short circuit analysis to real-time simulation,
+                    scripting, and cloud-based
+                    access, NEPLAN Research supports academic learning and advanced scientific studies. It offers free
+                    student
+                    versions, research licenses with up to 5000 nodes, and integrated scripting options for C# and
+                    Python, enabling
+                    customized automation and complex system modeling.
+                </p>
+            </header>
+
+            <div class="grid-neplan-overview">
+                <!-- Left - Key features for NEPLAN Research -->
+                <ul class="list-neplan-overview" role="list">
+                    <li class="ov-item-neplan-overview ov-reveal-left" data-reveal-delay="0ms">
+                        <span class="ov-icon-neplan-overview" aria-hidden="true">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M9.2 16.2 4.9 11.9l-1.4 1.4 5.7 5.7L20.6 7.6l-1.4-1.4z" />
+                            </svg>
+                        </span>
+                        <div class="ov-body-neplan-overview">
+                            <h3>Academic-Friendly Interface</h3>
+                            <p>Intuitive graphical user interface with pre-defined examples from IEC, IEEE, and leading
+                                power system textbooks, perfect for teaching and learning environments.</p>
+                        </div>
+                    </li>
+
+                    <li class="ov-item-neplan-overview ov-reveal-left" data-reveal-delay="120ms">
+                        <span class="ov-icon-neplan-overview" aria-hidden="true">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M9 2h6v2H9zM4 6h16v2H4zm0 4h16v2H4zm0 4h10v2H4zm0 4h7v2H4z" />
+                            </svg>
+                        </span>
+                        <div class="ov-body-neplan-overview">
+                            <h3>Advanced Research Tools</h3>
+                            <p>Supports NEPLAN Simulation Language (NSL-SymDef), event definitions, and scripting in C#
+                                and Python for custom automation and analysis.</p>
+                        </div>
+                    </li>
+
+                    <li class="ov-item-neplan-overview ov-reveal-left" data-reveal-delay="240ms">
+                        <span class="ov-icon-neplan-overview" aria-hidden="true">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M3 3h18v2H3zm2 4h14v2H5zm-2 4h18v2H3zm2 4h14v2H5zm-2 4h18v2H3z" />
+                            </svg>
+                        </span>
+                        <div class="ov-body-neplan-overview">
+                            <h3>Cloud & On-Prem Options</h3>
+                            <p>Free student version and research subscription licenses with up to 5000 nodes, accessible
+                                without any local installation.</p>
+                        </div>
+                    </li>
+
+                    <li class="ov-item-neplan-overview ov-reveal-left" data-reveal-delay="360ms">
+                        <span class="ov-icon-neplan-overview" aria-hidden="true">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M4 5h16v6H4zM4 13h7v6H4zm9 0h7v6h-7z" />
+                            </svg>
+                        </span>
+                        <div class="ov-body-neplan-overview">
+                            <h3>Multi-User University Packages</h3>
+                            <p>Includes licenses for teaching and research in a shared environment, with modules
+                                covering protection, reliability, stability, and optimization studies.</p>
+                        </div>
+                    </li>
+
+                    <li class="ov-item-neplan-overview ov-reveal-left" data-reveal-delay="480ms">
+                        <span class="ov-icon-neplan-overview" aria-hidden="true">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2 7 12h5v10l5-10h-5z" />
+                            </svg>
+                        </span>
+                        <div class="ov-body-neplan-overview">
+                            <h3>Integration & Scripting</h3>
+                            <p>Interfaces with MatPower, supports real-time data analysis, and offers web services for
+                                external application integration and automation workflows.</p>
+                        </div>
+                    </li>
+                </ul>
+
+                <!-- Right - Context card with CTA + Image -->
+                <aside class="card-neplan-overview ov-reveal-right" data-reveal-delay="160ms">
+                    <div class="card-chip-neplan-overview">NEPLAN Research</div>
+                    <h3 class="card-title-neplan-overview">Education • Research • Simulation</h3>
+                    <p class="card-text-neplan-overview">
+                        A comprehensive academic and research tool with free student versions, scripting support, and
+                        advanced simulation capabilities for modern power systems.
+                    </p>
+                    <a class="card-link-neplan-overview" href="https://neplan.ch/neplanproduct/en-electro-research/"
+                        target="_blank" rel="noopener">Learn more ↗</a>
+
+                    <figure class="card-illustration-neplan-overview">
+                        <img src="{% static '/images/products/research/neplan-box.avif' %}"
+                            alt="NEPLAN Research Platform" loading="lazy">
+                    </figure>
+                </aside>
+            </div>
+        </div>
+    </section>
+    <section class="section-neplan-key-features" aria-labelledby="nkf-research-title">
+        <div class="container-neplan-key-features">
+            <header class="nkf-head ov-reveal-up" data-reveal-delay="0ms">
+                <p class="nkf-eyebrow">Key Modules &amp; Features</p>
+                <h2 id="nkf-research-title" class="nkf-title">Principal Features in NEPLAN Research</h2>
+                <p class="nkf-lead">
+                    Tools for education, research, scripting, and advanced power system simulations.
+                </p>
+            </header>
+
+            <ul class="nkf-grid" role="list">
+                <!-- 1 -->
+                <li class="nkf-card ov-reveal-left" data-reveal-delay="0ms">
+                    <div class="nkf-card-head">
+                        <span class="nkf-modules-icon" aria-hidden="true">
+                            <span class="nkf-modules-bullet"></span>
+                        </span>
+                        <h3 class="nkf-card-title">Education Tools</h3>
+                    </div>
+                    <p class="nkf-card-text">
+                        Free student version, university licensing, and ready-to-use examples for teaching power system
+                        concepts.
+                    </p>
+                </li>
+
+                <!-- 2 -->
+                <li class="nkf-card ov-reveal-left" data-reveal-delay="120ms">
+                    <div class="nkf-card-head">
+                        <span class="nkf-modules-icon" aria-hidden="true">
+                            <span class="nkf-modules-bullet"></span>
+                        </span>
+                        <h3 class="nkf-card-title">Research Modules</h3>
+                    </div>
+                    <p class="nkf-card-text">
+                        Full library for load flow, short circuit, reliability, harmonic analysis, and stability
+                        simulations.
+                    </p>
+                </li>
+
+                <!-- 3 -->
+                <li class="nkf-card ov-reveal-left" data-reveal-delay="240ms">
+                    <div class="nkf-card-head">
+                        <span class="nkf-modules-icon" aria-hidden="true">
+                            <span class="nkf-modules-bullet"></span>
+                        </span>
+                        <h3 class="nkf-card-title">Scripting & APIs</h3>
+                    </div>
+                    <p class="nkf-card-text">
+                        Integrate with C#, Python, and NEPLAN Simulation Language (NSL) for automation and custom
+                        modeling.
+                    </p>
+                </li>
+
+                <!-- 4 -->
+                <li class="nkf-card ov-reveal-left" data-reveal-delay="360ms">
+                    <div class="nkf-card-head">
+                        <span class="nkf-modules-icon" aria-hidden="true">
+                            <span class="nkf-modules-bullet"></span>
+                        </span>
+                        <h3 class="nkf-card-title">Event Simulation</h3>
+                    </div>
+                    <p class="nkf-card-text">
+                        Create and analyze custom events during simulations for advanced power system studies.
+                    </p>
+                </li>
+
+                <!-- 5 -->
+                <li class="nkf-card ov-reveal-left" data-reveal-delay="480ms">
+                    <div class="nkf-card-head">
+                        <span class="nkf-modules-icon" aria-hidden="true">
+                            <span class="nkf-modules-bullet"></span>
+                        </span>
+                        <h3 class="nkf-card-title">Cloud Access</h3>
+                    </div>
+                    <p class="nkf-card-text">
+                        Run NEPLAN Research fully in the cloud with no local installation, scalable up to 5000 nodes.
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ===========================
+     Why Choose NEPLAN Electricity?
+     Simple bullet list (no cards)
+     =========================== -->
+    <section class="neplan-li-ul-points" aria-labelledby="why-neplan-title">
+        <div class="neplan-li-ul-points__inner">
+            <h3 id="why-neplan-title" class="neplan-li-ul-points__title ov-reveal-left">
+                Why Choose NEPLAN Research?
+            </h3>
+
+            <ul class="neplan-li-ul-points__list ov-reveal-left" role="list">
+                <li><strong>Designed for Education</strong> – Intuitive interface, ready-to-use examples, and free
+                    student versions for universities and engineering schools.</li>
+                <li><strong>Advanced Research Capabilities</strong> – Includes NEPLAN Simulation Language, event
+                    definitions, and scripting with C# and Python for custom modeling and automation.</li>
+                <li><strong>Cloud and On-Prem Options</strong> – Access from anywhere with cloud-based research licenses
+                    or deploy on-premise for full control over data.</li>
+                <li><strong>Comprehensive Module Coverage</strong> – Supports load flow, short circuit, reliability,
+                    stability analysis, protection studies, optimization, and real-time simulation.</li>
+                <li><strong>Integration & Data Exchange</strong> – Interfaces with MatPower, supports web services for
+                    external applications, and enables seamless data integration for advanced studies.</li>
+            </ul>
+        </div>
+    </section>
+
+
+    {% include "components/contact_block.html" %}
+
+    <script>
+        (function () {
+            const els = document.querySelectorAll('.ov-reveal-up, .ov-reveal-left, .ov-reveal-right');
+            if (!els.length) return;
+
+            // Optional per-item delay via data-reveal-delay="180ms"
+            els.forEach(el => {
+                const d = el.getAttribute('data-reveal-delay');
+                if (d) el.style.transitionDelay = /^\d+$/.test(d) ? `${d}ms` : d;
+            });
+
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(({ target, isIntersecting }) => {
+                    if (isIntersecting) target.classList.add('in-view');
+                    else target.classList.remove('in-view'); // replay when scrolling back
+                });
+            }, { threshold: 0.18 });
+
+            els.forEach(el => io.observe(el));
+        })();
+    </script>
+
+    <script>
+        (function () {
+            const root = document.getElementById('nesSlider');
+            if (!root) return;
+
+            const track = root.querySelector('.nes-track');
+            const dots = [...root.querySelectorAll('.nes-dot')];
+            const slides = root.querySelectorAll('.nes-slide');
+            const count = slides.length;
+
+            let index = 0;
+            let timer = null;
+
+            function go(i) {
+                index = (i + count) % count;
+                track.style.transform = `translateX(${-100 * index}%)`;
+                dots.forEach((d, di) => d.classList.toggle('is-active', di === index));
+            }
+
+            function play() {
+                stop();
+                timer = setInterval(() => go(index + 1), 3000);
+            }
+            function stop() {
+                if (timer) { clearInterval(timer); timer = null; }
+            }
+
+            // dot click
+            dots.forEach(d => d.addEventListener('click', e => {
+                const i = parseInt(d.dataset.slide, 10) || 0;
+                go(i);
+                play(); // continue autoplay after jump
+            }));
+
+            // pause on hover/focus inside the viewport
+            ['mouseenter', 'focusin'].forEach(ev => root.addEventListener(ev, stop));
+            ['mouseleave', 'focusout'].forEach(ev => root.addEventListener(ev, play));
+
+            // kick off
+            go(0);
+            play();
+        })();
+    </script>
+    {% include 'footer.html' %}
+    <!-- Link to Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/main.js'%}"></script>
+
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKQV8LKX" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+</body>
+
+</html>

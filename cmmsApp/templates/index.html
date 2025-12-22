@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEPLAN-Software</title>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-TKQV8LKX');</script>
+  <!-- End Google Tag Manager -->
+  <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="{% static 'css/neplan-home.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="{% static 'images/logo1.png' %}">
+  <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+
+
+</head>
+
+<body>
+  {% include 'header.html' %}
+    {% include 'request_demo_modal.html' %}
+ {% load static %}
+ <!-- style="--hero-bg:url('../images/neplan.avif')" -->
+<section class="section-neplan-home">
+  <!-- Set bg with STATIC -->
+  <div class="hero-card-neplan-home"
+     > 
+    <div class="inner-neplan-home">
+      <div class="content-neplan-home">
+        <h1 class="title-neplan-home">NEPLAN<br></h1>
+        <h2 class="title-neplan-home2">Empowering Intelligent Analysis for Modern Energy & Utilities</h2>
+        <p class="subtitle-neplan-home">
+         A modular, cloud-enabled platform delivering comprehensive analysis, planning, and asset management across electricity, gas, water, and heating networks.
+        </p>
+
+        <div class="cta-row-neplan-home">
+          <a href="#why-neplan" class="btn-neplan-home">Get Started <span class="arrow">→</span></a>
+          <a href="/product/" class="btn-neplan-home">Learn More <span class="arrow">→</span></a>
+        </div>
+      </div>
+
+      <!-- Optional device PNG; remove if not needed -->
+      <figure class="device-neplan-home" aria-hidden="true">
+        <img src="{% static 'images/neplan-banner.png' %}" alt="">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- =======================
+     What is NEPLAN & Why It Matters
+     ======================= -->
+<section class="section-neplan-description" id="why-neplan" aria-labelledby="why-title-neplan-description">
+  <div class="container-neplan-description">
+    <header class="head-neplan-description reveal-mobility">
+      <h3 id="why-title-neplan-description reveal-mobility">What is NEPLAN &amp; Why It Matters</h3>
+      <p class="reveal-mobility">
+        NEPLAN is a next-generation analytics &amp; planning platform designed for engineers,
+        utilities, and infrastructure owners. It integrates power system simulation, network
+        optimization, and asset lifecycle management into a single ecosystem.
+      </p>
+    </header>
+
+    <h4 class="subhead-neplan-description reveal-mobility">Core Benefits</h4>
+
+    <!-- Feature table -->
+    <div class="tablewrap-neplan-description">
+      <table class="table-neplan-description">
+        <thead>
+          <tr>
+            <th>Benefit</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="row-neplan-description">
+            <th scope="row">Modular Architecture</th>
+            <td data-label="Description">
+              Pick and deploy only the modules you need (electricity networks, gas/water, heating/cooling, Asset Management, modular, flexible & project-specific solutions, Anywhere, NEPLAN 360 - On-Prem & Cloud Solutions, Education & Advanced Simulation Platform, Grounding, Lightning & EMI Analysis  etc.).
+            </td>
+          </tr>
+          <tr class="row-neplan-description">
+            <th scope="row">Cloud &amp; On-Premise Flexibility</th>
+            <td data-label="Description">
+              Access the platform anywhere: desktop, browser, or connected devices.
+            </td>
+          </tr>
+          <tr class="row-neplan-description">
+            <th scope="row">Full-Stack Analysis</th>
+            <td data-label="Description">
+              Load flow, short circuit, dynamic simulation, steady-state, Protection Co-ordination, Arc Flash, &amp; transient models.
+            </td>
+          </tr>
+          <tr class="row-neplan-description">
+            <th scope="row">Asset Management &amp; Planning</th>
+            <td data-label="Description">
+              Long-term budgeting, reliability forecasting, and “what-if” scenarios.
+            </td>
+          </tr>
+          <tr class="row-neplan-description">
+            <th scope="row">Scalability &amp; Integration</th>
+            <td data-label="Description">
+              Suits small municipal grids to large national or multi-utility systems; integrates with SCADA, GIS, and IoT sensors.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+<!-- =======================
+     Key Highlights + CTA
+     ======================= -->
+<section class="section-neplan-cta-buttons" aria-labelledby="cta-title">
+  <div class="container-neplan-cta-buttons">
+    <div class="intro-neplan-cta-buttons reveal-mobility">
+      <p class="eyebrow-neplan-cta-buttons reveal-mobility">Key Highlights</p>
+      <h2 id="cta-title" class="title-neplan-cta-buttons reveal-mobility">
+        What NEPLAN offers at a glance
+      </h2>
+
+      <ul class="highlights-neplan-cta-buttons reveal-mobility">
+        <li>Unified tools for network modeling, optimization, &amp; simulation</li>
+        <li>Real-time monitoring &amp; forecasting</li>
+        <li>Scalable deployment - from small local grids to national infrastructure</li>
+      </ul>
+    </div>
+
+    <div class="actions-neplan-cta-buttons">
+      <a href="#" class="btn-neplan-cta-buttons js-open-demo reveal-mobility">Request a Demo</a>
+      <a href="/product/" class="btn-neplan-cta-buttons reveal-mobility">Explore Product Modules</a>
+      <a href="/contact/" class="btn-neplan-cta-buttons reveal-mobility">Get Started / Free Trial</a>
+    </div>
+  </div>
+</section>
+
+<!-- =======================
+     Key Product Areas / Applications
+     ======================= -->
+<section class="section-key-areas">
+  <div class="container-key-areas">
+    <p class="eyebrow-key-areas reveal-mobility">Key Product Areas / Applications</p>
+    <h2 class="heading-key-areas reveal-mobility">
+      Quick access points for what <span class="brand-key-areas reveal-mobility">NEPLAN</span> offers
+    </h2>
+  </div>
+</section>
+
+<section class="section-neplan-cards">
+  <div class="container-neplan-cards">
+    <ul class="grid-neplan-cards">
+      <!-- Card 1 -->
+      <li class="card-neplan-cards">
+        <div class="iconwrap-neplan-cards" aria-hidden="true">
+          <!-- cube -->
+          <svg viewBox="0 0 24 24" width="28" height="28">
+            <path d="M12 2l8 4v12l-8 4-8-4V6l8-4zm0 2.2L6 6.7v10.6l6 3.1 6-3.1V6.7L12 4.2z" fill="currentColor"/>
+          </svg>
+        </div>
+        <h3 class="title-neplan-cards">Electricity Networks</h3>
+        <p class="desc-neplan-cards">
+           Our software analyzes transmission, distribution, and industrial networks to ensure power flow stability. It provides comprehensive analysis for seamless integration of renewable energy sources, helping you manage a modern power grid efficiently. </p>
+        <ul class="list-neplan-cards">
+          <li> Power Flow</li>
+          <li>Stability</li>
+          <li>Renewable Integration</li>
+        </ul>
+      </li>
+
+      <!-- Card 2 -->
+      <li class="card-neplan-cards">
+        <div class="iconwrap-neplan-cards" aria-hidden="true">
+          <!-- atom -->
+          <svg viewBox="0 0 24 24" width="28" height="28">
+            <path d="M12 3a2 2 0 110 4 2 2 0 010-4zm0 5c3.9 0 7 1.6 7 3.5S15.9 15 12 15 5 13.4 5 11.5 8.1 8 12 8zm0 1.8c-2.9 0-5.2.8-5.2 1.7S9.1 13.2 12 13.2s5.2-.8 5.2-1.7S14.9 9.8 12 9.8z" fill="currentColor"/>
+          </svg>
+        </div>
+        <h3 class="title-neplan-cards">Gas/Water/Heating & Cooling</h3>
+        <p class="desc-neplan-cards">
+Streamline your utility operations with advanced tools for demand forecasting, distribution planning, and real-time leak detection. This comprehensive approach helps you improve efficiency, minimize waste, and enhance the reliability of your entire network.
+        </p>
+        <ul class="list-neplan-cards">
+          <li>Demand Forecasting</li>
+          <li>Distribution Planning</li>
+          <!-- <li>Automated Investing</li> -->
+        </ul>
+      </li>
+
+      <!-- Card 3 -->
+      <li class="card-neplan-cards">
+        <div class="iconwrap-neplan-cards" aria-hidden="true">
+          <!-- calendar -->
+          <svg viewBox="0 0 24 24" width="28" height="28">
+            <path d="M7 3h2v2h6V3h2v2h3v16H4V5h3V3zm12 6H5v10h14V9z" fill="currentColor"/>
+          </svg>
+        </div>
+        <h3 class="title-neplan-cards">Asset Management</h3>
+        <p class="desc-neplan-cards">
+         Maximize asset lifespan and reliability using our lifecycle planning tools. Optimize quality and strategically time investments to improve performance and reduce operational costs. This proactive approach ensures your assets provide lasting value and efficiency.
+        </p>
+        <ul class="list-neplan-cards">
+          <li>Lifecycle Planning</li>
+          <li> Reliability Optimization</li>
+          <!-- <li>Goal Deadlines</li> -->
+        </ul>
+      </li>
+
+      <!-- Card 4 -->
+      <li class="card-neplan-cards">
+        <div class="iconwrap-neplan-cards" aria-hidden="true">
+          <!-- shield -->
+          <svg viewBox="0 0 24 24" width="28" height="28">
+            <path d="M12 2l8 4v6c0 5-3.4 8.6-8 10-4.6-1.4-8-5-8-10V6l8-4z" fill="currentColor"/>
+          </svg>
+        </div>
+        <h3 class="title-neplan-cards">Monitoring & Real-Time Operations</h3>
+        <p class="desc-neplan-cards">
+          Our fully cloud-based NEPLAN solution provides real-time network visibility. Access live dashboards, receive automated alerts, and perform scenario planning for EV and renewable energy integration. Optimize network performance anytime, from anywhere.
+        </p>
+        <ul class="list-neplan-cards">
+          <li> Live Data Dashboards &amp; Alerts</li>
+          <li>Cloud-Based Accessibility</li>
+          <li> Custom Solutions for Unique Challenges</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</section><section class="section-neplan-testimonials" aria-labelledby="proj-title">
+  <div class="container-neplan-testimonials">
+    <span class="tag-neplan-testimonials reveal-mobility">Our Projects</span>
+    <h2 id="proj-title" class="title-neplan-testimonials reveal-mobility">
+      Recent Design • Supply • Commissioning
+    </h2>
+
+    <div class="stage-neplan-testimonials">
+      <div class="rail-neplan-testimonials" id="rail-neplan-testimonials" tabindex="0">
+
+        <!-- Card 1 -->
+        <article class="card-neplan-testimonials reveal-mobility">
+          <div class="content-neplan-testimonials fullwidth-content">
+            <div class="brand-neplan-testimonials">
+              <span>Waste Management & Environmental Facility</span>
+            </div>
+
+            <blockquote>
+              Protection coordination study for HV supply, padmount transformers and LV distribution boards. Included verification of protection philosophy, grading between upstream utility devices and onsite protection, and definition of relay/MCCB settings to ensure fast fault clearance, minimal nuisance tripping and secure, continuous operation. 
+            </blockquote>
+
+            <p class="who-neplan-testimonials">
+              Australia • 2025 - 2026
+            </p>
+
+            <a href="/static/pdfs/solar-bess-project.pdf"
+               target="_blank"
+               class="btn-neplan-pdf">
+              View Project PDF
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card-neplan-testimonials reveal-mobility">
+          <div class="content-neplan-testimonials fullwidth-content">
+            <div class="brand-neplan-testimonials">
+              <span>Packaging & Manufacturing Facility</span>
+            </div>
+
+            <blockquote>
+              Detailed LV network assessment including development of single line diagrams, load flow analysis at various operating scenarios, cable sizing and voltage drop checks, and short-circuit calculations. Protection coordination and arc flash hazard assessment were completed to align with relevant standards, improve safety, and support planned capacity expansion. 
+            </blockquote>
+
+            <p class="who-neplan-testimonials">
+              Australia • 2024-2025
+            </p>
+
+            <a href="/static/pdfs/generator-project.pdf"
+               target="_blank"
+               class="btn-neplan-pdf">
+              View Project PDF
+            </a>
+          </div>
+        </article>
+         <!-- Card 3 -->
+        <article class="card-neplan-testimonials reveal-mobility">
+          <div class="content-neplan-testimonials fullwidth-content">
+            <div class="brand-neplan-testimonials">
+              <span>Underground Mining Facility</span>
+            </div>
+
+            <blockquote>
+              In-depth review of protection schemes for underground feeders and surface supply, including CT/VT adequacy checks, load flow and short-circuit studies, and time-current coordination of relays and breakers. The study delivered a robust, standards-compliant protection setting report tailored to high-reliability, high-safety underground mining conditions. </blockquote>
+
+            <p class="who-neplan-testimonials">
+              Australia • 2013 - 2014
+            </p>
+
+            <a href="/static/pdfs/generator-project.pdf"
+               target="_blank"
+               class="btn-neplan-pdf">
+              View Project PDF
+            </a>
+          </div>
+        </article>
+
+         <!-- Card 4 -->
+        <article class="card-neplan-testimonials reveal-mobility">
+          <div class="content-neplan-testimonials fullwidth-content">
+            <div class="brand-neplan-testimonials">
+              <span>Open-Cut Mining Operation</span>
+            </div>
+
+            <blockquote>
+              Comprehensive HV/MV/LV system modelling from transmission intake through mine distribution networks. Scope included load flow studies, fault level analysis, motor starting assessments, reactive power/voltage control options, harmonic analysis and relay grading. Outcomes optimised network reliability, protection selectivity and power quality for critical mining processes. </blockquote>
+
+            <p class="who-neplan-testimonials">
+              Australia • 2012 - 2013
+            </p>
+
+            <a href="/static/pdfs/generator-project.pdf"
+               target="_blank"
+               class="btn-neplan-pdf">
+              View Project PDF
+            </a>
+          </div>
+        </article>
+
+        <!-- Repeat same structure for remaining cards -->
+
+      </div>
+
+      <!-- Controls -->
+      <div class="controls-neplan-testimonials">
+        <button class="nav-neplan-testimonials prev" aria-label="Previous project">‹</button>
+        <div class="progress-neplan-testimonials">
+          <span class="bar-neplan-testimonials"></span>
+        </div>
+        <button class="nav-neplan-testimonials next" aria-label="Next project">›</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-neplan-last-part">
+  <div class="container-neplan-last-part">
+    <!-- HOW IT WORKS -->
+    <div class="panel-neplan-last-part">
+      <h3 class="title-neplan-last-part">How It Works</h3>
+
+      <ol class="steps-neplan-last-part">
+        <li class="step-neplan-last-part">
+          <span class="num-neplan-last-part">1</span>
+          <div class="body-neplan-last-part">
+            <span class="label-neplan-last-part">Data Ingestion</span> - Import your network topology, consumption data, sensor/SCADA inputs.
+          </div>
+        </li>
+        <li class="step-neplan-last-part">
+          <span class="num-neplan-last-part">2</span>
+          <div class="body-neplan-last-part">
+            <span class="label-neplan-last-part">Model Setup</span> - Configure modules: electricity, gas, water, heating/cooling; define scenarios.
+          </div>
+        </li>
+        <li class="step-neplan-last-part">
+          <span class="num-neplan-last-part">3</span>
+          <div class="body-neplan-last-part">
+            <span class="label-neplan-last-part">Simulation &amp; Optimization</span> - Run analyses: load flows, short circuits, dynamic events, more.
+          </div>
+        </li>
+        <li class="step-neplan-last-part">
+          <span class="num-neplan-last-part">4</span>
+          <div class="body-neplan-last-part">
+            <span class="label-neplan-last-part">Decision Support</span> - View dashboards, compare “what-if” scenarios, plan investments, monitor live operations.
+          </div>
+        </li>
+      </ol>
+
+      <!-- BUTTONS BELOW -->
+      <div class="actions-neplan-last-part">
+        <div class="group-neplan-last-part">
+          <!-- <span class="group-label-neplan-last-part">Primary</span> -->
+          <div class="btn-row-neplan-last-part">
+            <a href="#" class="btn-neplan-last-part js-open-demo">Request a Demo</a>
+          </div>
+        </div>
+
+        <div class="group-neplan-last-part">
+          <!-- <span class="group-label-neplan-last-part">Secondary</span> -->
+          <div class="btn-row-neplan-last-part">
+            <!-- <a href="#" class="btn-ghost-neplan-last-part">Download Brochure</a> -->
+            <a href="/contact/" class="btn-ghost-neplan-last-part">Contact Sales</a>
+            <a href="#" class="btn-ghost-neplan-last-part js-open-demo">Free Trial</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  {% include 'footer.html' %}
+  <!-- Link to Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+   <script defer src="{% static 'js/demo_form.js' %}"></script>
+  <script defer src="{% static 'js/main.js' %}"></script>
+  <script defer src="{% static 'js/neplan.js' %}"></script>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKQV8LKX" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+</body>
+
+</html>

@@ -1,0 +1,538 @@
+/* ============ Services (namespaced) ============ */
+.neplan-services {
+  --bg: #ffffff;
+  --bg-soft: #f6f8fb;
+  --text: #26292e;
+  --muted: #5b6472;
+  --primary: #0f766e;
+  /* teal */
+  --primary-2: #155e75;
+  --ring: rgba(15, 118, 110, .25);
+  --shadow: 0 12px 28px rgba(2, 8, 23, .10), 0 2px 6px rgba(2, 8, 23, .05);
+  --radius: 18px;
+
+  color: rgb(207, 218, 217);
+
+  padding: clamp(28px, 4vw, 48px) clamp(16px, 5vw, 56px);
+}
+
+/* Hero */
+.neplan-services .nsv-hero {
+  max-width: 1100px;
+  margin: 0 auto clamp(32px, 5vw, 64px);
+  text-align: center;
+}
+
+.neplan-services .nsv-kicker {
+  display: inline-flex;
+  gap: .5rem;
+  align-items: center;
+  padding: .35rem .75rem;
+  border-radius: 999px;
+  background: #0ea5e9;
+  color: #002a3a;
+  font-weight: 700;
+  letter-spacing: .3px;
+}
+
+.neplan-services .nsv-title {
+  margin: .6rem 0 .6rem;
+  font-size: clamp(1.8rem, 4.2vw, 3rem);
+  line-height: 1.15;
+}
+
+.neplan-services .nsv-sub {
+  color: #adbed8;
+  max-width: 850px;
+  margin: 0 auto 1.25rem;
+}
+
+.neplan-services .nsv-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  justify-content: center;
+}
+
+/* Blocks (split) */
+.neplan-services .nsv-block {
+  display: grid;
+  grid-template-columns: 1.1fr 1.2fr;
+  gap: clamp(18px, 3vw, 32px);
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto clamp(38px, 6vw, 84px);
+
+}
+
+.neplan-services .nsv-block--invert {
+  grid-template-columns: 1.2fr 1.1fr;
+}
+
+@media (max-width: 970px) {
+
+  .neplan-services .nsv-block,
+  .neplan-services .nsv-block--invert {
+    grid-template-columns: 1fr;
+  }
+}
+
+.neplan-services .nsv-block__media {
+  position: relative;
+}
+
+.neplan-services .nsv-block__media img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.neplan-services .nsv-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #fff;
+  color: #0b1720;
+  border-radius: 12px;
+  padding: .45rem .75rem;
+  font-weight: 700;
+  box-shadow: var(--shadow);
+}
+
+.neplan-services .nsv-block__content h2 {
+  font-size: clamp(1.4rem, 3.2vw, 2.1rem);
+  margin: 0 0 .5rem;
+  color: #002a3a;
+  padding-top: 50px;
+}
+
+.neplan-services .nsv-lead {
+  color: #155e75;
+  margin: .2rem 0 .8rem;
+}
+
+.neplan-services .nsv-eyebrow {
+  font-size: .92rem;
+  letter-spacing: .26px;
+  text-transform: uppercase;
+  margin: 1.1rem 0 .45rem;
+  color: var(--primary-2);
+}
+.neplan-services .nsv-muted{
+  color: #0b0f14;
+}
+/* Lists */
+.neplan-services .nsv-list {
+  margin: 0 0 .75rem;
+  padding: 0 0 0 0;
+  list-style: none;
+}
+
+.neplan-services .nsv-list li {
+  padding: .4rem 0 .4rem 1.75rem;
+  position: relative;
+  color: var(--text);
+}
+
+.neplan-services .nsv-list--check li::before,
+.neplan-services .nsv-list--dot li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .6rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+}
+
+.neplan-services .nsv-list--check li::before {
+  background: radial-gradient(circle at 65% 35%, #fff 0 40%, #0f766e 41% 100%);
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, .15);
+}
+
+.neplan-services .nsv-list--dot li::before {
+  background: var(--primary);
+  opacity: .18;
+}
+
+/* Cards */
+.neplan-services .nsv-cards {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.neplan-services .nsv-cards--wide {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 920px) {
+
+  .neplan-services .nsv-cards,
+  .neplan-services .nsv-cards--wide {
+    grid-template-columns: 1fr;
+  }
+}
+
+.neplan-services .nsv-card {
+  background: var(--bg-soft);
+  border-radius: 16px;
+  padding: 16px 16px;
+  box-shadow: var(--shadow);
+}
+
+.neplan-services .nsv-card h4 {
+  margin: .2rem 0 .3rem;
+  color: #002a3a;
+}
+.neplan-services .nsv-card p{
+   color: #155e75;
+
+}
+
+.neplan-services .nsv-card--accent {
+  background: linear-gradient(180deg, #ffffff, #eff8f7);
+}
+
+/* Steps (30-60-90) */
+.neplan-services .nsv-steps {
+  list-style: none;
+  padding: 0;
+  margin: .2rem 0 .8rem;
+}
+
+.neplan-services .nsv-steps li {
+  padding: .55rem .75rem;
+  background: #fff;
+  border-radius: 12px;
+  margin: .35rem 0;
+  box-shadow: var(--shadow);
+  color: #0f766e;
+}
+
+.neplan-services .nsv-steps li span {
+  font-weight: 800;
+  color: var(--primary-2);
+  margin-right: .5rem;
+}
+
+/* Grid helper */
+.neplan-services .nsv-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.neplan-services .nsv-grid--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width:830px) {
+  .neplan-services .nsv-grid--two {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Buttons */
+.neplan-services .nsv-btn {
+  --h: 46px;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  height: var(--h);
+  padding: 0 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: all .2s ease;
+  box-shadow: 0 4px 14px rgba(15, 118, 110, .18);
+}
+
+.neplan-services .nsv-btn--xl {
+  --h: 54px;
+  font-size: 1.05rem;
+  padding: 0 22px;
+}
+
+.neplan-services .nsv-btn--primary {
+  background: linear-gradient(90deg, var(--primary), var(--primary-2));
+  color: #fff;
+  border-color: transparent;
+}
+
+.neplan-services .nsv-btn--primary:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+
+.neplan-services .nsv-btn--ghost {
+  background: #fff;
+  color: var(--text);
+  border-color: rgba(15, 118, 110, .25);
+}
+
+.neplan-services .nsv-btn--ghost:hover {
+  box-shadow: 0 8px 20px rgba(2, 8, 23, .08);
+  border-color: var(--primary);
+}
+
+/* Why */
+.neplan-services .nsv-why {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.neplan-services .nsv-why h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin: 0 0 .75rem;
+  color: #155e75;
+}
+
+.neplan-services .nsv-cta--center {
+  justify-content: center;
+  padding-top: 20px;
+}
+
+/* Reveal on scroll */
+.neplan-services [data-reveal] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all .6s cubic-bezier(.2, .8, .2, 1);
+  will-change: transform, opacity;
+}
+
+.neplan-services [data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.neplan-services [data-reveal="left"] {
+  transform: translateX(-40px);
+}
+
+.neplan-services [data-reveal="right"] {
+  transform: translateX(40px);
+}
+
+.neplan-services [data-reveal="up"] {
+  transform: translateY(30px);
+}
+
+
+body {
+  margin-top: 5.5rem;
+
+}
+:root{
+  --hero-height: clamp(420px, 72vh, 760px);
+  --hero-maxw: 1100px;
+  --nes-text:#fff;
+  --btn-bg:#1f7ae0;
+}
+
+/* Make the HERO itself the background holder (full width) */
+.neplan-electricity-slide{
+  position: relative;
+  min-height: var(--hero-height);
+  /* set/keep your image here */
+  background-image: url('../images/service.avif');
+  background-size: cover;           /* cover viewport width */
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--nes-text);
+}
+
+/* Full-width overlay for readability */
+.neplan-electricity-slide::before{
+  content:"";
+  position:absolute; inset:0;
+  /* pick one overlay; vertical works well for centered text */
+  background: linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.45));
+  pointer-events:none;
+}
+
+/* The inner wrapper no longer constrains width */
+.nes-viewport{
+  position: relative;
+  min-height: var(--hero-height);
+  width: 100%;
+  margin: 0;               /* no centering box */
+  padding-inline: clamp(16px, 3vw, 28px);
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
+}
+
+/* Center the content on top of the overlay */
+.nsv-hero{
+  position: relative;
+  z-index: 1;
+  min-height: var(--hero-height);
+  max-width: var(--hero-maxw);
+  margin-inline: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: clamp(10px, 1.6vw, 14px);
+  padding-block: clamp(20px, 4vh, 44px);
+}
+
+.nsv-kicker{
+  margin: 0;
+  display:inline-block;
+  font-weight: 800;
+  font-size: .95rem;
+  padding: .4rem .8rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,.18);
+  backdrop-filter: blur(2px);
+}
+
+.nsv-title{
+  margin: 0;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: .2px;
+  font-size: clamp(1.6rem, 4.6vw, 2.6rem);
+}
+
+.nsv-sub{
+  margin: 0;
+  opacity: .92;
+  line-height: 1.65;
+  font-size: clamp(.95rem, 1.8vw, 1.05rem);
+  max-width: 72ch;
+}
+
+.cta-buttons{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: clamp(8px, 2vh, 14px);
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: .75rem 1.1rem;
+  border-radius: 999px;
+  font-weight: 800;
+  text-decoration: none;
+  border: 2px solid rgba(255,255,255,.65);
+  color:#fff;
+  transition: transform .2s ease, filter .2s ease, border-color .2s ease;
+}
+.btn-primary{ background: var(--btn-bg); border-color: transparent; }
+.btn-secondary{ background: transparent; }
+.btn:hover{ transform: translateY(-2px); filter: brightness(1.05); }
+
+/* Responsive tweaks */
+@media (max-width: 900px){
+  :root{ --hero-maxw: 900px; }
+  .nsv-sub{ max-width: 60ch; }
+}
+@media (max-width: 640px){
+  :root{ --hero-height: clamp(380px, 64vh, 560px); }
+  .cta-buttons{ gap: 10px; }
+}
+@media (max-width: 420px){
+  .btn{ width: 100%; }
+}
+
+
+
+/* === CTA buttons: unified outline style + clean stacking === */
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(8px, 2.2vw, 16px);
+}
+
+/* Base button (same for all three) */
+.cta-buttons .btn,
+.cta-buttons a {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(10px, 1.6vw, 14px) clamp(18px, 2.6vw, 24px);
+  border-radius: 999px;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  border: 2px solid rgba(255, 255, 255, .9);
+  background: transparent;
+  color: var(--light-text);
+  transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease, border-color .2s ease, color .2s ease;
+  flex: 0 1 auto;
+  min-width: max-content;
+}
+
+/* Normalize legacy variants so all look identical by default */
+.cta-buttons .btn-primary,
+.cta-buttons .btn-secondary,
+.cta-buttons .btn-tertiary {
+  background: transparent !important;
+  color: var(--light-text) !important;
+  border-color: rgba(255, 255, 255, .9) !important;
+}
+
+/* REMOVE any variant-specific :hover you had before */
+
+/* Unified hover/focus for ALL buttons (wins over globals) */
+.cta-buttons .btn:is(:hover, :focus-visible) {
+  background: #007bff !important;
+  border-color: #007bff !important;
+  color: #002a3a !important;
+  /* readable on blue */
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .25);
+}
+
+/* Small screens: stack cleanly */
+@media (max-width: 640px) {
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-buttons .btn {
+    width: min(100%, 22rem);
+  }
+}
+
+/* Variants */
+.btn-primary {
+  background: #007bff;
+  color: #002a3a;
+  border-color: #007bff;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--light-text);
+  border-color: var(--light-text);
+}
+
+/* Respect motion prefs */
+@media (prefers-reduced-motion: reduce) {
+  .hero-video {
+    display: none;
+  }
+}
+
+/* Ultra-small devices: tighter padding */
+@media (max-width: 360px) {
+  .hero {
+    padding-inline: 12px;
+  }
+}
