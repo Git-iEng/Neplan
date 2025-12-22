@@ -112,3 +112,4 @@ document.getElementById('cmms-contact-form-getstarted').addEventListener('submit
     goTo(0);
     start();
 })();
+
