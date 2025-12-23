@@ -266,7 +266,7 @@
   transform: translateY(-18px);
   opacity: 0;
   pointer-events: none;
-  z-index: 9999;
+  z-index: 999999 !important;
   text-align: center;
   font-weight: 700;
 }

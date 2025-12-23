@@ -921,7 +921,7 @@ This section is important for the desktop view, as it overrides the mobile style
     border-radius: 10px !important;
     min-width: 280px !important;
     padding: 8px 0 !important;
-    z-index: 99999 !important;
+    /* z-index: 99999 !important; */
   }
 
   /* show when hovering li OR hovering the menu itself */
@@ -981,7 +981,7 @@ This section is important for the desktop view, as it overrides the mobile style
     box-shadow: 0 10px 25px rgba(0,0,0,0.18) !important;
     padding: 8px 0 !important;
     min-width: 280px !important;
-    z-index: 99999 !important;
+    /* z-index: 99999 !important; */
   }
 
   /* Show on hover of li OR hover of menu (critical) */
@@ -1006,4 +1006,4 @@ This section is important for the desktop view, as it overrides the mobile style
     background: rgba(0,0,0,0.06) !important;
   }
 }
-.header { z-index: 999999 !important; }
+/* .header { z-index: 9999 !important; } */
