@@ -86,7 +86,7 @@ body{
   --nc-bg: #ffffff;
   --nc-ink: #0e1b2b;
   --nc-muted:#5b6472;
-  --nc-accent:#15e3c8;         /* teal tile */
+  --nc-accent: #0f766e;     /* teal tile */
   --nc-accent-ink:#ffffff;
   --nc-radius: 14px;
   --nc-gap: clamp(18px, 3vw, 32px);
@@ -95,6 +95,8 @@ body{
 
   background: var(--nc-bg);
   padding: clamp(18px, 4vw, 40px);
+
+  
 }
 
 .neplan-call-us-anytime__grid{
@@ -103,12 +105,14 @@ body{
   display: grid;
   gap: var(--nc-gap);
   grid-template-columns: repeat(3, minmax(0, 1fr));
+   justify-items: center;
 }
 
 .neplan-call-us-anytime__item{
   background: transparent;
   padding: clamp(8px, 1.2vw, 12px) 0;
   color: var(--nc-ink);
+  /* text-align: center; */
 }
 
 .neplan-call-us-anytime__icon{

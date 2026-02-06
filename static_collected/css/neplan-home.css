@@ -34,6 +34,14 @@ body {
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   padding-top: 5.5rem;
 }
+html {
+  margin: 0;
+  /* remove default 8px margin that causes scroll with full-bleed rows */
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  /* belt-and-suspenders: stop any stray overflow */
+}
 
 .section-neplan-home {
   padding: clamp(16px, 3.5vw, 28px) 16px;
@@ -981,12 +989,7 @@ height: 300px;
   margin-bottom: .35rem;
 }
 
-.brand-neplan-testimonials img {
-  width: 20px;
-  height: 20px;
-  border-radius: 4px;
-  display: block;
-}
+
 
 .card-neplan-testimonials blockquote {
   margin: .25rem 0 .6rem;
@@ -1437,4 +1440,39 @@ height: 300px;
     flex: 1 1 100%;
     text-align: center;
   }
+}
+/* Make card content full width */
+.fullwidth-content {
+  width: 100%;
+  padding: 1.5rem 1.75rem;
+}
+
+/* Ensure card layout stays clean without images */
+.card-neplan-testimonials {
+  display: flex;
+  align-items: stretch;
+}
+
+/* Button styling */
+.btn-neplan-pdf {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.55rem 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0f766e;
+  border: 1.5px solid #0f766e;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn-neplan-pdf:hover {
+  background-color: #0f766e;
+  color: #ffffff;
+}
+
+/* Optional: spacing consistency */
+.who-neplan-testimonials {
+  margin-bottom: 0.5rem;
 }
