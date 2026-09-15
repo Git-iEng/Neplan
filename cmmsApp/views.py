@@ -12,13 +12,17 @@ from django.core import signing
 from django.contrib.staticfiles.storage import staticfiles_storage
 from django.contrib.staticfiles import finders
 import requests
-from django.conf import settings
 
 
 from threading import Thread
 from pathlib import Path
 import mimetypes
 import re
+import secrets
+import hashlib
+import hmac
+import time
+import os
 
 import phonenumbers
 import pycountry
@@ -72,6 +76,939 @@ def _send_demo_email_async(subject: str, text_body: str, html_body: str | None =
 def _send_contact_email_async(subject: str, text_body: str, html_body: str | None = None):
     """Fire-and-forget email for Contact form."""
     recipients = getattr(settings, "CONTACT_RECIPIENTS", None)
+    Thread(
+        target=_send_email,
+        args=(subject, text_body, html_body, recipients),
+        daemon=True,
+    ).start()
+
+
+# ============================================================
+# CONTACT EMAIL OTP
+# ============================================================
+
+# OTP expires after 3 minutes
+CONTACT_OTP_EXPIRY_SECONDS = 3 * 60
+
+# User must wait 60 seconds before requesting another OTP
+CONTACT_OTP_RESEND_SECONDS = 60
+
+# Maximum incorrect OTP attempts
+CONTACT_OTP_MAX_ATTEMPTS = 5
+
+# After successful OTP verification,
+# allow 15 minutes to submit the contact form
+CONTACT_VERIFICATION_TOKEN_MAX_AGE = 15 * 60
+
+CONTACT_OTP_SESSION_KEY = (
+    "contact_email_otp"
+)
+
+CONTACT_VERIFIED_SESSION_KEY = (
+    "contact_email_verified"
+)
+
+CONTACT_VERIFICATION_SALT = (
+    "contact-email-verification-v1"
+)
+
+
+# ============================================================
+# NORMALISE EMAIL
+# ============================================================
+
+def _normalise_email(
+    email: str
+) -> str:
+
+    return (
+        email
+        or ""
+    ).strip().lower()
+
+
+# ============================================================
+# HASH OTP
+# ============================================================
+
+def _hash_contact_otp(
+    email: str,
+    otp: str
+) -> str:
+
+    message = (
+        f"{_normalise_email(email)}|{otp}"
+    ).encode(
+        "utf-8"
+    )
+
+
+    key = settings.SECRET_KEY.encode(
+        "utf-8"
+    )
+
+
+    return hmac.new(
+        key,
+        message,
+        hashlib.sha256
+    ).hexdigest()
+
+
+# ============================================================
+# SEND OTP EMAIL
+# ============================================================
+
+def _send_contact_otp_email(
+    email: str,
+    otp: str
+) -> None:
+
+    subject = (
+        "iEngineering Email Verification Code"
+    )
+
+
+    text_body = (
+
+        "Hello,\n\n"
+
+        "Please use the following OTP to verify "
+        "your email address for your iEngineering "
+        "website inquiry.\n\n"
+
+        f"Verification code: {otp}\n\n"
+
+        "This OTP will expire in 3 minutes.\n\n"
+
+        "If you did not request this verification, "
+        "please ignore this email.\n"
+
+    )
+
+
+    html_body = f"""
+
+    <div
+        style="
+            font-family:Arial,sans-serif;
+            max-width:560px;
+            margin:auto;
+            padding:20px;
+        "
+    >
+
+        <h2
+            style="
+                margin-bottom:10px;
+                color:#176f73;
+            "
+        >
+            Verify your email address
+        </h2>
+
+
+        <p>
+            Please use the following OTP to verify
+            your email address for your iEngineering
+            website inquiry.
+        </p>
+
+
+        <div
+            style="
+                font-size:30px;
+                font-weight:700;
+                letter-spacing:8px;
+                padding:16px 20px;
+                background:#f3f6f7;
+                border-radius:10px;
+                display:inline-block;
+                margin:10px 0 18px;
+            "
+        >
+
+            {otp}
+
+        </div>
+
+
+        <p>
+            This OTP will expire in
+            <strong>3 minutes</strong>.
+        </p>
+
+
+        <p
+            style="
+                color:#667085;
+                font-size:13px;
+            "
+        >
+            If you did not request this verification,
+            please ignore this email.
+        </p>
+
+    </div>
+
+    """
+
+
+    connection = get_connection(
+
+        timeout=getattr(
+            settings,
+            "EMAIL_TIMEOUT",
+            15
+        )
+
+    )
+
+
+    message = EmailMultiAlternatives(
+
+        subject=subject,
+
+        body=text_body,
+
+        from_email=(
+            getattr(
+                settings,
+                "DEFAULT_FROM_EMAIL",
+                None
+            )
+            or
+            getattr(
+                settings,
+                "EMAIL_HOST_USER",
+                None
+            )
+        ),
+
+        to=[email],
+
+        connection=connection
+
+    )
+
+
+    message.attach_alternative(
+        html_body,
+        "text/html"
+    )
+
+
+    message.send(
+        fail_silently=False
+    )
+
+
+# ============================================================
+# SEND OTP EMAIL (ASYNC WRAPPER)
+# ============================================================
+#
+# Runs _send_contact_otp_email() in a background thread so the
+# HTTP request returns immediately instead of blocking on the
+# SMTP handshake/send. This avoids Gunicorn/nginx timeouts when
+# the mail server is slow to respond.
+# ============================================================
+
+def _send_contact_otp_email_async(
+    email: str,
+    otp: str
+) -> None:
+
+    Thread(
+        target=_send_contact_otp_email,
+        args=(
+            email,
+            otp
+        ),
+        daemon=True
+    ).start()
+
+
+# ============================================================
+# SEND OTP API
+# ============================================================
+
+@require_POST
+def send_email_otp(
+    request
+):
+
+
+    email = _normalise_email(
+
+        request.POST.get(
+            "email"
+        )
+
+    )
+
+
+    # --------------------------------------------------------
+    # Validate email
+    # --------------------------------------------------------
+
+    try:
+
+        validate_email(
+            email
+        )
+
+
+    except ValidationError:
+
+        return JsonResponse(
+            {
+                "ok": False,
+
+                "message":
+                    "Please enter a valid email address."
+            },
+            status=400
+        )
+
+
+    now = int(
+        time.time()
+    )
+
+
+    current = request.session.get(
+        CONTACT_OTP_SESSION_KEY
+    )
+
+
+    # --------------------------------------------------------
+    # Resend cooldown
+    # --------------------------------------------------------
+
+    if (
+        current
+        and
+        current.get("email") == email
+    ):
+
+
+        sent_at = int(
+            current.get(
+                "sent_at",
+                0
+            )
+        )
+
+
+        remaining = (
+            CONTACT_OTP_RESEND_SECONDS
+            -
+            (
+                now
+                -
+                sent_at
+            )
+        )
+
+
+        if remaining > 0:
+
+            return JsonResponse(
+                {
+                    "ok": False,
+
+                    "message":
+                        f"Please wait {remaining} seconds "
+                        "before requesting another OTP.",
+
+                    "retry_after":
+                        remaining
+                },
+                status=429
+            )
+
+
+    # --------------------------------------------------------
+    # Generate random 6-digit OTP
+    # --------------------------------------------------------
+
+    otp = (
+        f"{secrets.randbelow(1_000_000):06d}"
+    )
+
+
+    # --------------------------------------------------------
+    # Store hashed OTP in session
+    # --------------------------------------------------------
+
+    request.session[
+        CONTACT_OTP_SESSION_KEY
+    ] = {
+
+        "email":
+            email,
+
+        "otp_hash":
+            _hash_contact_otp(
+                email,
+                otp
+            ),
+
+        "expires_at":
+            now
+            +
+            CONTACT_OTP_EXPIRY_SECONDS,
+
+        "sent_at":
+            now,
+
+        "attempts":
+            0
+
+    }
+
+
+    # Previous email verification becomes invalid
+
+    request.session.pop(
+        CONTACT_VERIFIED_SESSION_KEY,
+        None
+    )
+
+
+    request.session.modified = True
+
+
+    # --------------------------------------------------------
+    # Send OTP email (async, so this request returns fast and
+    # does not block on the SMTP handshake/send)
+    # --------------------------------------------------------
+
+    _send_contact_otp_email_async(
+        email,
+        otp
+    )
+
+
+    # --------------------------------------------------------
+    # Success
+    # --------------------------------------------------------
+
+    return JsonResponse(
+        {
+            "ok": True,
+
+            "message":
+                "OTP sent successfully. "
+                "Please check your email.",
+
+            "expires_in":
+                CONTACT_OTP_EXPIRY_SECONDS,
+
+            "resend_after":
+                CONTACT_OTP_RESEND_SECONDS
+        }
+    )
+
+
+# ============================================================
+# VERIFY OTP API
+# ============================================================
+
+@require_POST
+def verify_email_otp(
+    request
+):
+
+
+    email = _normalise_email(
+
+        request.POST.get(
+            "email"
+        )
+
+    )
+
+
+    otp = (
+        request.POST.get(
+            "otp"
+        )
+        or
+        ""
+    ).strip()
+
+
+    # --------------------------------------------------------
+    # Validate email
+    # --------------------------------------------------------
+
+    try:
+
+        validate_email(
+            email
+        )
+
+
+    except ValidationError:
+
+        return JsonResponse(
+            {
+                "ok": False,
+
+                "message":
+                    "Please enter a valid email address."
+            },
+            status=400
+        )
+
+
+    # --------------------------------------------------------
+    # Validate OTP format
+    # --------------------------------------------------------
+
+    if not re.fullmatch(
+        r"\d{6}",
+        otp
+    ):
+
+        return JsonResponse(
+            {
+                "ok": False,
+
+                "message":
+                    "Please enter the 6-digit OTP."
+            },
+            status=400
+        )
+
+
+    current = request.session.get(
+        CONTACT_OTP_SESSION_KEY
+    )
+
+
+    # --------------------------------------------------------
+    # No active OTP
+    # --------------------------------------------------------
+
+    if not current:
+
+        return JsonResponse(
+            {
+                "ok": False,
+
+                "message":
+                    "No active OTP was found. "
+                    "Please request a new OTP."
+            },
+            status=400
+        )
+
+
+    # --------------------------------------------------------
+    # Check email belongs to OTP
+    # --------------------------------------------------------
+
+    if (
+        current.get(
+            "email"
+        )
+        !=
+        email
+    ):
+
+        return JsonResponse(
+            {
+                "ok": False,
+
+                "message":
+                    "This OTP was requested for "
+                    "a different email address."
+            },
+            status=400
+        )
+
+
+    now = int(
+        time.time()
+    )
+
+
+    # --------------------------------------------------------
+    # Check 3-minute expiry
+    # --------------------------------------------------------
+
+    if (
+        now
+        >
+        int(
+            current.get(
+                "expires_at",
+                0
+            )
+        )
+    ):
+
+
+        request.session.pop(
+            CONTACT_OTP_SESSION_KEY,
+            None
+        )
+
+
+        request.session.modified = True
+
+
+        return JsonResponse(
+            {
+                "ok": False,
+
+                "message":
+                    "OTP expired. "
+                    "Please request a new OTP."
+            },
+            status=400
+        )
+
+
+    # --------------------------------------------------------
+    # Attempts
+    # --------------------------------------------------------
+
+    attempts = int(
+        current.get(
+            "attempts",
+            0
+        )
+    )
+
+
+    if (
+        attempts
+        >=
+        CONTACT_OTP_MAX_ATTEMPTS
+    ):
+
+
+        request.session.pop(
+            CONTACT_OTP_SESSION_KEY,
+            None
+        )
+
+
+        request.session.modified = True
+
+
+        return JsonResponse(
+            {
+                "ok": False,
+
+                "message":
+                    "Too many incorrect OTP attempts. "
+                    "Please request a new OTP."
+            },
+            status=429
+        )
+
+
+    # --------------------------------------------------------
+    # Compare OTP securely
+    # --------------------------------------------------------
+
+    entered_hash = (
+        _hash_contact_otp(
+            email,
+            otp
+        )
+    )
+
+
+    expected_hash = (
+        current.get(
+            "otp_hash",
+            ""
+        )
+    )
+
+
+    if not hmac.compare_digest(
+        entered_hash,
+        expected_hash
+    ):
+
+
+        attempts += 1
+
+
+        current[
+            "attempts"
+        ] = attempts
+
+
+        request.session[
+            CONTACT_OTP_SESSION_KEY
+        ] = current
+
+
+        request.session.modified = True
+
+
+        remaining_attempts = (
+            CONTACT_OTP_MAX_ATTEMPTS
+            -
+            attempts
+        )
+
+
+        if (
+            remaining_attempts
+            <=
+            0
+        ):
+
+
+            request.session.pop(
+                CONTACT_OTP_SESSION_KEY,
+                None
+            )
+
+
+            request.session.modified = True
+
+
+            return JsonResponse(
+                {
+                    "ok": False,
+
+                    "message":
+                        "Too many incorrect OTP attempts. "
+                        "Please request a new OTP."
+                },
+                status=429
+            )
+
+
+        return JsonResponse(
+            {
+                "ok": False,
+
+                "message":
+                    f"Incorrect OTP. "
+                    f"{remaining_attempts} attempt(s) remaining."
+            },
+            status=400
+        )
+
+
+    # ========================================================
+    # OTP CORRECT
+    # ========================================================
+
+    nonce = (
+        secrets.token_urlsafe(
+            24
+        )
+    )
+
+
+    request.session[
+        CONTACT_VERIFIED_SESSION_KEY
+    ] = {
+
+        "email":
+            email,
+
+        "nonce":
+            nonce,
+
+        "verified_at":
+            now
+
+    }
+
+
+    # OTP can only be used once
+
+    request.session.pop(
+        CONTACT_OTP_SESSION_KEY,
+        None
+    )
+
+
+    request.session.modified = True
+
+
+    # --------------------------------------------------------
+    # Create signed verification token
+    # --------------------------------------------------------
+
+    verification_token = signing.dumps(
+        {
+            "email":
+                email,
+
+            "nonce":
+                nonce
+        },
+        salt=
+            CONTACT_VERIFICATION_SALT,
+        compress=True
+    )
+
+
+    return JsonResponse(
+        {
+            "ok": True,
+
+            "verified": True,
+
+            "message":
+                "Email verified successfully.",
+
+            "verification_token":
+                verification_token
+        }
+    )
+
+
+# ============================================================
+# CHECK VERIFIED EMAIL
+# ============================================================
+
+def _is_contact_email_verified(
+    request,
+    email: str,
+    token: str
+) -> bool:
+
+
+    if (
+        not email
+        or
+        not token
+    ):
+
+        return False
+
+
+    # --------------------------------------------------------
+    # Decode signed token
+    # --------------------------------------------------------
+
+    try:
+
+        payload = signing.loads(
+
+            token,
+
+            salt=
+                CONTACT_VERIFICATION_SALT,
+
+            max_age=
+                CONTACT_VERIFICATION_TOKEN_MAX_AGE
+
+        )
+
+
+    except (
+        signing.SignatureExpired,
+        signing.BadSignature
+    ):
+
+        return False
+
+
+    session_verification = (
+        request.session.get(
+            CONTACT_VERIFIED_SESSION_KEY
+        )
+    )
+
+
+    if not session_verification:
+
+        return False
+
+
+    email = _normalise_email(
+        email
+    )
+
+
+    payload_email = _normalise_email(
+        payload.get(
+            "email"
+        )
+    )
+
+
+    session_email = _normalise_email(
+        session_verification.get(
+            "email"
+        )
+    )
+
+
+    nonce = (
+        payload.get(
+            "nonce"
+        )
+        or
+        ""
+    )
+
+
+    session_nonce = (
+        session_verification.get(
+            "nonce"
+        )
+        or
+        ""
+    )
+
+
+    return (
+
+        hmac.compare_digest(
+            email,
+            payload_email
+        )
+
+        and
+
+        hmac.compare_digest(
+            email,
+            session_email
+        )
+
+        and
+
+        hmac.compare_digest(
+            nonce,
+            session_nonce
+        )
+
+    )
+
+
+# ============================================================
+# REMOVE VERIFICATION AFTER SUCCESSFUL SUBMIT
+# ============================================================
+
+def _consume_contact_email_verification(
+    request
+):
+
+    request.session.pop(
+        CONTACT_VERIFIED_SESSION_KEY,
+        None
+    )
+
+
+    request.session.modified = True
+
+
 def request_demo_view(request):
     if request.method != "POST":
         return redirect("/")
@@ -253,35 +1190,69 @@ def contact_section(request):
     if request.method == "POST" and form.is_valid():
         cd = form.cleaned_data
 
-        # Normalize phone & resolve country name
+        # Normalize the submitted email before checking the OTP verification.
+        email = _normalise_email(cd.get("email", ""))
+        verification_token = (
+            request.POST.get("email_verification_token") or ""
+        ).strip()
+
+        # Server-side protection: the contact form cannot be submitted
+        # until the same email address has been successfully OTP-verified.
+        if not _is_contact_email_verified(request, email, verification_token):
+            messages.error(
+                request,
+                "Please verify your email address before submitting the form.",
+            )
+            return render(
+                request,
+                "contact_section.html",
+                {
+                    "form": form,
+                    "sent": False,
+                    "RECAPTCHA_SITE_KEY": settings.RECAPTCHA_SITE_KEY,
+                },
+            )
+
+        # Normalize phone & resolve country name.
         e164_phone, resolved_alpha2, resolved_country_name = normalize_phone_and_country(
             cd.get("phone", ""), cd.get("country", "")
         )
 
-
-        # Email body
+        # Email body.
         subject = "New website contact submission for NeplanSoftware"
         text_body = "\n".join(
             [
                 "New contact submission for Neplan Software:",
-                f"Name: {cd['first_name']} {cd.get('last_name','')}".strip(),
-                f"Company: {cd.get('company','')}",
-                f"Email: {cd['email']}",
-                f"Country: {resolved_country_name or country_name_from_alpha2(resolved_alpha2) or cd.get('country','')}",
-                f"Phone: {e164_phone or cd.get('phone','')}",
+                f"Name: {cd['first_name']} {cd.get('last_name', '')}".strip(),
+                f"Company: {cd.get('company', '')}",
+                f"Email: {email}",
+                "Email verified: Yes",
+                f"Country: {resolved_country_name or country_name_from_alpha2(resolved_alpha2) or cd.get('country', '')}",
+                f"Phone: {e164_phone or cd.get('phone', '')}",
                 "",
                 "Message:",
-                cd.get("message", ""),
-                f"From: {request.META.get('HTTP_REFERER','')}",
-                f"IP:   {request.META.get('REMOTE_ADDR','')}",
+                cd.get("message", "") or "(none)",
+                f"From: {request.META.get('HTTP_REFERER', '')}",
+                f"IP:   {request.META.get('REMOTE_ADDR', '')}",
             ]
         )
 
         _send_contact_email_async(subject, text_body, None)
 
+        # Make the successful verification one-use only.
+        _consume_contact_email_verification(request)
+
         return redirect(reverse("cmmsApp:contact_thanks"))
 
-    return render(request, "contact_section.html", {"form": form, "sent": request.GET.get("sent")})
+    return render(
+        request,
+        "contact_section.html",
+        {
+            "form": form,
+            "sent": request.GET.get("sent"),
+            "RECAPTCHA_SITE_KEY": settings.RECAPTCHA_SITE_KEY,
+        },
+    )
 
 
 # ---------- NEW: helper (not a view) ----------
